@@ -1,4 +1,5 @@
 using System.Data.Entity.Migrations;
+using System.Linq;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MySensei.Infrastructure;
@@ -35,6 +36,23 @@ namespace MySensei.Migrations
             {
                 userMgr.AddToRole(user.Id, roleName);
             }
+
+            if (!context.Tags.Any(x => x.TagName == "Funny"))
+            {
+                var tag = new Tag();
+                tag.TagName = "Funny";
+
+                context.Tags.Add(tag);
+            }
+
+            if (!context.Tags.Any(x => x.TagName == "Boring"))
+            {
+                var tag = new Tag();
+                tag.TagName = "Boring";
+
+                context.Tags.Add(tag);
+            }
+           
             
             context.SaveChanges();
         }

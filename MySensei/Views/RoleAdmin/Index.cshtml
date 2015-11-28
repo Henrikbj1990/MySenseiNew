@@ -25,19 +25,15 @@
                         else
                         {
                             <p>
-                                @string.Join(", ", role.Users.Select(x =>
-Html.GetUserName(x.UserId)))
+                                @string.Join(", ", role.Users.Select(x =>Html. GetUserName(x.UserId)))
                         </p>
                         }
                     </td>
                     <td>
-                        @using (Html.BeginForm("Delete", "RoleAdmin",
-new { id = role.Id }))
+                        @using (Html.BeginForm("Delete", "RoleAdmin", new { id = role.Id }))
                         {
-                            @Html.ActionLink("Edit", "Edit", new { id = role.Id },
-new { @class = "btn btn-primary btn-xs" })
-                            <button class="btn btn-danger btn-xs"
-                                    type="submit">
+                            @Html.ActionLink("Edit", "Edit", new { id = role.Id }, new { @class = "btn btn-primary btn-xs" })
+                            <button class="btn btn-danger btn-xs" type="submit">
                                 Delete
                             </button>
                         }

@@ -174,6 +174,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\RoleAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,18 +187,31 @@
     <Compile Include="Infrastructure\AppIdentityDbContext.cs" />
     <Compile Include="Infrastructure\CustomPasswordValidator.cs" />
     <Compile Include="Infrastructure\IdentityHelpers.cs" />
-    <Compile Include="Migrations\201510171414034_UserPropertiesFirstnameLastname.cs" />
-    <Compile Include="Migrations\201510171414034_UserPropertiesFirstnameLastname.Designer.cs">
-      <DependentUpon>201510171414034_UserPropertiesFirstnameLastname.cs</DependentUpon>
+    <Compile Include="Migrations\201511271414375_coursetable.cs" />
+    <Compile Include="Migrations\201511271414375_coursetable.Designer.cs">
+      <DependentUpon>201511271414375_coursetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511271650289_one-to-many-course-user-table.cs" />
+    <Compile Include="Migrations\201511271650289_one-to-many-course-user-table.Designer.cs">
+      <DependentUpon>201511271650289_one-to-many-course-user-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511281451556_Tags.cs" />
+    <Compile Include="Migrations\201511281451556_Tags.Designer.cs">
+      <DependentUpon>201511281451556_Tags.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\UserViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AssignedTagData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Admin\Index.cshtml" />
@@ -208,6 +222,11 @@
     <Content Include="Views\RoleAdmin\Index.cshtml" />
     <Content Include="Views\RoleAdmin\Create.cshtml" />
     <Content Include="Views\RoleAdmin\Edit.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -216,8 +235,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510171414034_UserPropertiesFirstnameLastname.resx">
-      <DependentUpon>201510171414034_UserPropertiesFirstnameLastname.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511271414375_coursetable.resx">
+      <DependentUpon>201511271414375_coursetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511271650289_one-to-many-course-user-table.resx">
+      <DependentUpon>201511271650289_one-to-many-course-user-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511281451556_Tags.resx">
+      <DependentUpon>201511281451556_Tags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

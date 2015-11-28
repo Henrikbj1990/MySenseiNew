@@ -16,13 +16,20 @@
         }
     </style>
 </head>
-<body class="container">
-    <div class="container">
-        @RenderBody()
-    </div>
+    <body class="container">
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("Users", "Index", "Admin")</li>
+                <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
+                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
+            </ul>
+        </nav>
+        <div class="container">
+            @RenderBody()
+        </div>
 
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-</body>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </body>
 </html>
