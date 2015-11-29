@@ -19,18 +19,12 @@
     <body class="container">
         <nav>
             <ul>
-                @*<li>@Html.ActionLink("Users", "Index", "Admin")</li>
+                <li>@Html.ActionLink("Users", "Index", "Admin")</li>
                 <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
-                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>*@
+                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
             </ul>
         </nav>
         <div class="container">
-            
-            @if (!User.Identity.IsAuthenticated)
-            {
-                //Login
-            }
-
             @RenderBody()
         </div>
 

@@ -1,19 +1,13 @@
-﻿
+﻿@model List<MySensei.Models.Course>
 @{
     ViewBag.Title = "Index";
 }
 
-<div class="panel panel-primary">
-    <div class="panel-heading">User Details</div>
-    <table class="table table-striped">
-        @foreach (string key in Model.Keys) {
-            <tr>
-                <td>@key</td>
-                <td>@Model[key]</td>
-            </tr>
-        }
-    </table>
+<h2>Index</h2>
 
-</div>
+<h1>Det her er forsiden</h1>
 
-@Html.ActionLink("Sign Out ", "Logout", "Account", null, new { @class = "btn btn-primary" })
+@foreach (var course in Model)
+{
+    <p>@course.Title</p>
+}

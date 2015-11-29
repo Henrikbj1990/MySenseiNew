@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using MySensei.Infrastructure;
 using System.Web;
 
-namespace MySensei.Controllers
+namespace MySensei.Areas.Admin.Controllers
 {
     [Authorize]
     public class AccountController : Controller

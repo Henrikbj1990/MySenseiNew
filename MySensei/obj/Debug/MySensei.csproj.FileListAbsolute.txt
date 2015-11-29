@@ -164,10 +164,10 @@ C:\Users\Julian\Desktop\mysenseinew\MySensei\bin\System.Web.Webpages.Deployment.
 C:\Users\Julian\Desktop\mysenseinew\MySensei\bin\System.Web.Webpages.Razor.xml
 C:\Users\Julian\Desktop\mysenseinew\MySensei\bin\System.Web.Helpers.xml
 C:\Users\Julian\Desktop\mysenseinew\MySensei\bin\System.Web.Mvc.xml
-C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.csprojResolveAssemblyReference.cache
-C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.dll
-C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.pdb
 C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.Migrations.coursetable.resources
-C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.csproj.GenerateResource.Cache
 C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.Migrations.onetomanycourseusertable.resources
 C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.Migrations.Tags.resources
+C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.csproj.GenerateResource.Cache
+C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.dll
+C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.pdb
+C:\Users\Julian\Desktop\mysenseinew\MySensei\obj\Debug\MySensei.csprojResolveAssemblyReference.cache
