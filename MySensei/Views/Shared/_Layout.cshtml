@@ -15,25 +15,32 @@
         }
     </style>
 </head>
-    <body class="container">
-        <nav>
-            <ul>
-                @*<li>@Html.ActionLink("Users", "Index", "Admin")</li>
+<body class="container">
+    <nav>
+        <h1>@Html.ActionLink("LOGO FORSIDE", "Index", "Home")</h1>
+        <ul>
+            @*<li>@Html.ActionLink("Users", "Index", "Admin")</li>
                 <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
                 <li>@Html.ActionLink("Courses", "Index", "Courses")</li>*@
-            </ul>
-        </nav>
-        <div class="container">
-            
-            @if (!User.Identity.IsAuthenticated)
-            {
-                //Login
-            }
+        </ul>
+    </nav>
+    <div class="container">
 
-            @RenderBody()
-        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Profil ", "Index", "Profile")
+            @Html.ActionLink("Sign Out ", "Logout", "Account", null)
+        }
+        else if (!User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Login", "Login", "Account")
+        }
+
+        @RenderBody()
+    </div>
 
 
-        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    </body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+</body>
+
 </html>
