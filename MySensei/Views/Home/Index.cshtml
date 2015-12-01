@@ -7,7 +7,7 @@
 
 <h1>Det her er forsiden</h1>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
 {
     <p>
         Søg efter kursus: @Html.TextBox("SearchString") <br />
