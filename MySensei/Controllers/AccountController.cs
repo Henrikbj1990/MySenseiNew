@@ -14,7 +14,7 @@ namespace MySensei.Areas.Admin.Controllers
     public class AccountController : Controller
     {
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login(string returnUrl = "/Home")
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -28,7 +28,7 @@ namespace MySensei.Areas.Admin.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginModel details, string returnUrl)
+        public async Task<ActionResult> Login(LoginModel details, string returnUrl = "/Home")
         {
             if (ModelState.IsValid)
             {
@@ -46,6 +46,7 @@ namespace MySensei.Areas.Admin.Controllers
                     {
                         IsPersistent = false
                     }, ident);
+
                     return Redirect(returnUrl);
                 }
             }

@@ -29,7 +29,7 @@
         @if (User.Identity.IsAuthenticated)
         {
             @Html.ActionLink("Profil ", "Index", "Profile")
-            @Html.ActionLink("Sign Out ", "Logout", "Account", null)
+            @Html.ActionLink("Sign Out ", "Logout", "Account")
         }
         else if (!User.Identity.IsAuthenticated)
         {
