@@ -7,6 +7,18 @@
 
 <h1>Det her er forsiden</h1>
 
+@using (Html.BeginForm())
+{
+    <p>
+        Søg efter kursus: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+
+ 
+
+
 @foreach (var course in Model)
 {
     <p>@course.Title</p>
