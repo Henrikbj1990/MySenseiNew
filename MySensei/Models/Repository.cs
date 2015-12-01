@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using MySensei.Infrastructure;
 
 namespace MySensei.Models
@@ -15,7 +17,6 @@ namespace MySensei.Models
         // GET: Courses
         public IEnumerable<Course> GetCourses()
         {
-
             return db.Courses.ToList();
         }
 

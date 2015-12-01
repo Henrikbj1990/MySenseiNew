@@ -8,3 +8,8 @@
 @Model.FirstName
 
 @Model.LastName
+
+@foreach (var course in Model.Courses)
+{
+    @course.Title
+}

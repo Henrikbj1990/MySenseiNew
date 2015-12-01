@@ -13,6 +13,8 @@ namespace MySensei.Controllers
 {
     public class ProfileController : Controller
     {
+        private AppIdentityDbContext db = new AppIdentityDbContext();
+
         // GET: Profile
         [Authorize]
         public ActionResult Index()
@@ -20,7 +22,6 @@ namespace MySensei.Controllers
             //var currentUserId = User.Identity.GetUserId();
             var manager = new UserManager<AppUser>(new UserStore<AppUser>(new AppIdentityDbContext()));
             var currentUser = manager.FindById(User.Identity.GetUserId());
-
             return View(currentUser);
         }
     }
