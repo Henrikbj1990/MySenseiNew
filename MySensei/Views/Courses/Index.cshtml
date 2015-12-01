@@ -1,0 +1,13 @@
+﻿@model List<MySensei.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@foreach (var course in Model)
+{
+    @course.Title
+}
