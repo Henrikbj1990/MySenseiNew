@@ -1,14 +1,131 @@
 ﻿@model List<MySensei.Models.Course>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Forside";
 }
+<aside class="sidebar" id="sidebar">
+    <div class="side-content">
+        <a href="#" class="close-menu">&#x02297;</a> <h3>OPRET BRUGER</h3>
+        <form action="" class="mform">
 
-<h2>Index</h2>
+            <fieldset>
+                <section>
+                    <label class="input">
+                        <i class="icon-append icon-user"></i>
+                        <input type="text" placeholder="Brugernavn">
+                        <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                    </label>
+                </section>
 
-<h1>Det her er forsiden</h1>
+                <section>
+                    <label class="input">
+                        <i class="icon-append icon-envelope-alt"></i>
+                        <input type="text" placeholder="Email adresse">
+                        <b class="tooltip tooltip-bottom-right">Så vi kan verificere din email</b>
+                    </label>
+                </section>
 
+                <section>
+                    <label class="input">
+                        <i class="icon-append icon-lock"></i>
+                        <input type="password" placeholder="Password">
+                        <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                    </label>
+                </section>
 
-@foreach (var course in Model)
-{
-    <p>@course.Title</p>
-}
+                <section>
+                    <label class="input">
+                        <i class="icon-append icon-lock"></i>
+                        <input type="password" placeholder="Gentag password">
+                        <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                    </label>
+                </section>
+            </fieldset>
+
+            <fieldset>
+                <div class="row">
+                    <section class="col half">
+                        <label class="input">
+                            <input type="text" placeholder="Fornavn">
+                        </label>
+                    </section>
+                    <section class="col half">
+                        <label class="input">
+                            <input type="text" placeholder="Efternavn">
+                        </label>
+                    </section>
+                </div>
+
+                <section>
+                    <label class="select">
+                        <select>
+                            <option value="0" selected disabled>Køn</option>
+                            <option value="1">Mand</option>
+                            <option value="2">Kvinde</option>
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+
+                <section>
+                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jeg godkender <a href="#">brugerbetingelserne</a></label>
+
+                </section>
+            </fieldset>
+            <footer>
+                <button type="submit" class="button">Opret</button>
+            </footer>
+        </form>
+    </div>
+</aside>
+<div class="main-content">
+    <section>
+        <div class="container">
+            <div class="split">
+                <h1>Find en sensei der kan hjælpe dig.</h1>
+                
+                <div class="split">
+                    <p>Jeg vil gerne finde en Sensei der kan lære mig at . .</p>
+                    <form action="" class="mform">
+                        <fieldset>
+                            <label class="input">
+                               
+                                <input type="text" placeholder=".. Spille guitar">
+                            </label>
+                            <button type="submit" class="button s-btn">Find Sensei</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="split">
+                    <p>Jeg vil gerne blive en Sensei der kan lære andre at . .</p>
+                    <form action="" class="mform">
+                        <fieldset>
+                            <label class="input">
+                              
+                                <input type="text" placeholder=".. Tegne">
+                            </label>
+                            <button type="submit" class="button s-btn">Bliv Sensei</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <a href="#sidebar">Sidebar</a>
+        </div>
+    </section>
+
+    <div class="clearfix"></div>
+    <section class="bluebg">
+        <div class="container">
+            <h1 class="center">Nyeste kurser</h1>
+            <div class="row">
+            @foreach (var course in Model)
+            {
+                <div class="grid-4">
+                <h3 class="center">@course.Title</h3>
+                    <p>@course.Description</p>
+                </div>
+            }
+                </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+</div>

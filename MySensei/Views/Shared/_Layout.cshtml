@@ -4,52 +4,75 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="description" content="" />
+    <title>@ViewBag.Title - MySensei</title>
     <link href="~/Content/styles.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    <style>
-        .container {
-            padding-top: 10px;
-        }
-        .validation-summary-errors {
-            color: #f00;
-        }
-    </style>
+    <script src="~/Scripts/classie.js"></script>
+    <script src="~/Scripts/init.js"></script>
+ 
 </head>
-<body class="container">
-    <nav>
-        <h1>@Html.ActionLink("LOGO FORSIDE", "Index", "Home")</h1>
-        @using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
-        {
-            <p>
-                Søg efter kursus: @Html.TextBox("SearchString") <br />
-                <input type="submit" value="Filter" />
-            </p>
-        }
-        <ul>
-            @*<li>@Html.ActionLink("Users", "Index", "Admin")</li>
+<body>
+    <div id="wrapper" class="page-wrap">
+
+        <header>
+            <div class="container clearfix">
+
+
+                <a href="@Url.Action("Index", "Home")">
+                    <img class="logo" src="@Url.Content("~/Content/img/logo.png")" />
+                </a>
+
+                <nav>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Min profil ", "Index", "Profile")
+                        @Html.ActionLink("Log ud", "Logout", "Account")
+                    }
+                    else if (!User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Log ind", "Login", "Account")
+                        @Html.ActionLink("Opret bruger", "Index", "SignUp")
+                    }
+                </nav>
+            </div>
+        </header><!-- /header -->
+@*
+    @using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
+    {
+        <p>
+            Søg efter kursus: @Html.TextBox("SearchString") <br />
+            <input type="submit" value="Filter" />
+        </p>
+    }
+    <ul>
+            <li>@Html.ActionLink("Users", "Index", "Admin")</li>
                 <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
-                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>*@
-        </ul>
-    </nav>
-    <div class="container">
+                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
+        </ul>*@
 
-        @if (User.Identity.IsAuthenticated)
-        {
-            @Html.ActionLink("Profil ", "Index", "Profile")
-            @Html.ActionLink("Sign Out ", "Logout", "Account")
-        }
-        else if (!User.Identity.IsAuthenticated)
-        {
-            @Html.ActionLink("Login", "Login", "Account")
-            @Html.ActionLink("Sign Up", "Index", "SignUp")
-        }
+        <div id="main">
+            <div id="content">
+                
 
-        @RenderBody()
-    </div>
+                        @RenderBody()
 
+            </div>
+       
+
+
+            <footer>
+                <div class="container center">
+                    <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert.</p>
+                </div>
+            </footer>
+            
+        </div><!-- #main -->
+    </div> <!-- #wrapper -->
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    
+    
 </body>
 
 </html>

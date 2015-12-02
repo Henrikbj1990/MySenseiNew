@@ -141,6 +141,19 @@
     <Content Include="App_Data\IdentityDb_log.ldf">
       <DependentUpon>IdentityDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\form.css">
+      <DependentUpon>form.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\form.min.css">
+      <DependentUpon>form.css</DependentUpon>
+    </Content>
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\styles.css">
+      <DependentUpon>styles.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\styles.min.css">
+      <DependentUpon>styles.css</DependentUpon>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -150,8 +163,15 @@
     <Content Include="Areas\Admin\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Content\styles.scss" />
+    <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+    <Content Include="Content\form.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\classie.js" />
+    <Content Include="Scripts\init.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
