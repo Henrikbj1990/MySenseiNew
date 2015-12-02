@@ -234,6 +234,7 @@
     <Content Include="Views\SignUp\Index.cshtml" />
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\SearchCourses.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -254,6 +255,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
