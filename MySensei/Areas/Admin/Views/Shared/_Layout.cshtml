@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/styles.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Admin/Content/AdminStyles.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <style>
         .container {
@@ -15,19 +15,33 @@
         }
     </style>
 </head>
-    <body class="container">
+<body class="container">
+
+<div id="wrapper" class="page-wrap">
+
+    <header>
+        <div class="container clearfix">
+            <a href="@Url.Action("Index", "Home")">
+                <img class="logo" src="@Url.Content("~/Content/img/logo.png")" />
+            </a>
         <nav>
-            <ul>
-                <li>@Html.ActionLink("Users", "Index", "Admin")</li>
-                <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
-                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
-            </ul>
+
+            @Html.ActionLink("Users", "Index", "Admin")
+            @Html.ActionLink("Roles", "Index", "RoleAdmin")
+            @Html.ActionLink("Courses", "Index", "Courses")
+
         </nav>
-        <div class="container">
-            @RenderBody()
-        </div>
+            </div>
+</header>
+
+
+<div class="container">
+    @RenderBody()
+</div>
+
+</div>
 
 
         <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    </body>
+</body>
 </html>
