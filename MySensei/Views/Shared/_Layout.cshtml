@@ -36,18 +36,18 @@
                 </nav>
             </div>
         </header><!-- /header -->
-        @*
-            @using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
-            {
-                <p>
-                    Søg efter kursus: @Html.TextBox("SearchString") <br />
-                    <input type="submit" value="Filter" />
-                </p>
-            }
-            <ul>
-                    <li>@Html.ActionLink("Users", "Index", "Admin")</li>
-                        <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
-                        <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
+@*
+    @using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
+    {
+        <p>
+            Søg efter kursus: @Html.TextBox("SearchString") <br />
+            <input type="submit" value="Filter" />
+        </p>
+    }
+    <ul>
+            <li>@Html.ActionLink("Users", "Index", "Admin")</li>
+                <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
+                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
                 </ul>
         *@
         <p>
@@ -60,25 +60,25 @@
             <li></li>
         </ul>
         @Html.Partial("_Login", new LoginModel())
-       
+
         <div id="main">
             <div id="content">
-
-                @RenderBody()
+                
+                        @RenderBody()
             </div>
-
+       
 
             <footer>
                 <div class="container center">
                     <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert.</p>
                 </div>
             </footer>
-
+            
         </div><!-- #main -->
     </div> <!-- #wrapper -->
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-
-
+    
+    
 </body>
 
 </html>

@@ -1,2 +1,82 @@
-﻿body {
+﻿$dark : #3B3B3B;
+$blue : #47b7b7;
+$yellow : #ffcb63;
+$light-grey : #efefef;
+
+body {
+  background-color: #ffffff;
+  color: $dark;
+  font-family: Helvetica, sans serif;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 1.8;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+   }
+
+a {
+  text-decoration: none;
+  color: $blue;
+
+        .rev{ color: $yellow ;}
+        .rev:hover{color: $blue}
+  }
+a:hover {color: $yellow; }
+
+#wrapper {
+  width: 100%;
+  margin: 0 auto; }
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 5% ; }
+
+header {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: $light-grey ;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s; 
+  
+       .logo {
+        display: inline-block;
+        height: 25px;
+	    margin-top:25px;
+        float: left;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s; }
+        
+       nav {
+           width:auto;
+        display: inline-block;
+        float: right;
+             a {
+              line-height: 80px;
+              margin-left: 20px;
+              color: black;
+              font-weight: 400;
+              font-size: 14px;
+              -webkit-transition: all 0.3s;
+              -moz-transition: all 0.3s;
+              -o-transition: all 0.3s;
+              transition: all 0.3s; 
+                    }
+                 
+             a:hover {
+                        color: $blue; 
+                        }
+             }
+             
+ }

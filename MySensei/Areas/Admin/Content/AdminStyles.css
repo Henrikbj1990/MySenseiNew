@@ -1,2 +1,70 @@
-﻿
-/*# sourceMappingURL=AdminStyles.css.map */
+﻿body {
+  background-color: #ffffff;
+  color: #3B3B3B;
+  font-family: Helvetica, sans serif;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 1.8; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1; }
+
+a {
+  text-decoration: none;
+  color: #47b7b7; }
+  a .rev {
+    color: #ffcb63; }
+  a .rev:hover {
+    color: #47b7b7; }
+
+a:hover {
+  color: #ffcb63; }
+
+#wrapper {
+  width: 100%;
+  margin: 0 auto; }
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 5%; }
+
+header {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #efefef;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s; }
+  header .logo {
+    display: inline-block;
+    height: 25px;
+    margin-top: 25px;
+    float: left;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+  header nav {
+    width: auto;
+    display: inline-block;
+    float: right; }
+    header nav a {
+      line-height: 80px;
+      margin-left: 20px;
+      color: black;
+      font-weight: 400;
+      font-size: 14px;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+    header nav a:hover {
+      color: #47b7b7; }
+
