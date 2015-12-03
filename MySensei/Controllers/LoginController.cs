@@ -33,6 +33,10 @@ namespace MySensei.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginModel details, string returnUrl = "/Home")
         {
+            if (string.IsNullOrEmpty(returnUrl))
+                returnUrl = "/Home";
+
+
             if (ModelState.IsValid)
             {
                 AppUser user = await UserManager.FindAsync(details.UserName, details.Password);
@@ -54,7 +58,7 @@ namespace MySensei.Controllers
                 }
             }
             ViewBag.returnUrl = returnUrl;
-            return PartialView("_Login", details);
+            return Redirect(returnUrl);
         }
 
 
