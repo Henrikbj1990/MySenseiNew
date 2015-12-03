@@ -26,14 +26,14 @@
                 <nav>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @Html.ActionLink("Min profil ", "Index", "Profile")
-                        @Html.ActionLink("Log ud", "Logout", "Account")
+                        <i class="icon-append icon-user"></i>@Html.ActionLink("Min profil ", "Index", "Profile")
+                        <i class="icon-append icon-lock"></i>@Html.ActionLink("Log ud", "Logout", "Account")
                     }
                     else if (!User.Identity.IsAuthenticated)
                     {
-                        @Html.Partial("_Login", new LoginModel())
-                        @*@Html.ActionLink("Log ind", "Login", "Account")*@
-                        @Html.ActionLink("Opret bruger", "Index", "SignUp")
+                        @*@Html.Partial("_Login")*@
+                        <i class="icon-append icon-lock"></i>@Html.ActionLink("Log ind", "Login", "Account")
+                        <i class="icon-append icon-user"></i>@Html.ActionLink("Opret bruger", "Index", "SignUp")
                     }
                 </nav>
             </div>
