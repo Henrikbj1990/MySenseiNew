@@ -1,6 +1,7 @@
-﻿<h2>Log In</h2>
+﻿@model MySensei.Models.LoginModel
+<h2>Log In</h2>
 @Html.ValidationSummary()
-@using (Html.BeginForm())
+@using (Html.BeginForm("Login","Login",FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     ;

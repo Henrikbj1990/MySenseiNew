@@ -31,8 +31,8 @@
                     }
                     else if (!User.Identity.IsAuthenticated)
                     {
-                        @*@Html.Partial("_Login")*@
-                        @Html.ActionLink("Log ind", "Login", "Account")
+                        @Html.Partial("_Login", new LoginModel())
+                        @*@Html.ActionLink("Log ind", "Login", "Account")*@
                         @Html.ActionLink("Opret bruger", "Index", "SignUp")
                     }
                 </nav>
