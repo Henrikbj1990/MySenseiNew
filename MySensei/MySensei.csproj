@@ -141,6 +141,7 @@
     <Content Include="App_Data\IdentityDb_log.ldf">
       <DependentUpon>IdentityDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\fontawesome.css" />
     <Content Include="Content\form.css">
       <DependentUpon>form.scss</DependentUpon>
     </Content>

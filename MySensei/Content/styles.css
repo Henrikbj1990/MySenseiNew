@@ -1,5 +1,6 @@
 ﻿@import url(reset.css);
 @import url(form.css);
+@import url(fontawesome.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 body {
   background-color: #ffffff;
@@ -207,7 +208,8 @@ header {
   padding: 0 2%;
   float: left; }
   .split .mform {
-    margin-left: -2% !important; }
+    margin-left: -2% !important;
+    margin-top: 30px; }
 
 .center {
   margin: 0 auto;
@@ -215,18 +217,31 @@ header {
   text-align: center; }
 
 .s-btn {
-  width: 100%; }
+  width: 100%;
+  color: #fff !important;
+  font-weight: bold !important; }
 
 .s-btn:hover {
-  background: #47b7b7 !important; }
+  background: #47b7b7 !important;
+  color: #fff; }
+
+.behind {
+  z-index: -100; }
 
 @media all and (max-width: 1024px) {
   section h1 {
     font-size: 40px; }
   .split {
     width: 70%; }
-    .split .mform {
-      margin-top: -40px; } }
+    .split form {
+      margin-top: 20px !important; }
+    .split .hr {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 1px solid #ffcb63; }
+  #sidebar:target {
+    width: 50%;
+    padding: 0 15px 0 15px; } }
 
 @media all and (max-width: 768px) {
   .split {
@@ -234,7 +249,10 @@ header {
   .sidebar {
     position: absolute; }
   #sidebar:target {
-    width: 80%; } }
+    width: 80%; }
+  .grid-4 {
+    width: 46%;
+    padding: 0 1%; } }
 
 @media all and (max-width: 480px) {
   section {
@@ -246,28 +264,26 @@ header {
     float: none;
     margin: 0 auto;
     height: 20px;
-    margin-top: 15px;
-    line-height: 80px;
+    margin-top: 10px;
+    line-height: 40px;
     text-align: center; }
   header nav {
     display: block;
     float: none;
-    height: 50px;
+    height: 20px;
     text-align: center;
     margin: 0 auto; }
   header nav a {
-    line-height: 50px;
+    line-height: 35px;
     margin: 0 10px; }
   header .small {
     height: 75px; }
-  header .small h1#logo {
-    height: 40px;
-    line-height: 60px;
-    font-size: 30px; }
+  header .small .logo {
+    height: 30px; }
   header .small nav {
-    height: 35px; }
+    height: 30px; }
   header .small nav a {
-    line-height: 35px; }
+    line-height: 25px; }
   header #sidebar:target {
     width: 90%; }
   .split {
