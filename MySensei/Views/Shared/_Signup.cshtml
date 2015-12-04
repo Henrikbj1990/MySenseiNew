@@ -29,7 +29,7 @@
                         <label class="input">
                             <i class="icon-append icon-lock"></i>
                             @Html.PasswordFor(x => x.Password, new { @placeholder = "Password" })
-                            <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                            <b class="tooltip tooltip-bottom-right">Skal indeholde mindst et stort bogstav og et tal - mindst 6 tegn</b>
                         </label>
                     </section>
 
@@ -41,17 +41,21 @@
                         </label>
                     </section>*@
                 </fieldset>
-
+                <div class="clearfix hr"></div>
                 <fieldset>
                     <div class="row">
-                        <section class="col half mform">
+                        <section class="mform">
                             <label class="input">
+                                <i class="icon-append icon-user"></i>
                                 @Html.TextBoxFor(x => x.FirstName, new { @placeholder = "Fornavn" })
+                                <b class="tooltip tooltip-bottom-right">Kun almindelige tegn</b>
                             </label>
                         </section>
-                        <section class="col half mform">
+                        <section class="mform">
                             <label class="input">
+                                <i class="icon-append icon-user"></i>
                                 @Html.TextBoxFor(x => x.LastName, new { @placeholder = "Efternavn" })
+                                <b class="tooltip tooltip-bottom-right">Kun almindelige tegn</b>
                             </label>
                         </section>
                     </div>
@@ -68,12 +72,14 @@
                     </section>*@
 
                     <section>
-                        <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jeg godkender <a href="#">brugerbetingelserne</a></label>
-                    </section>
-                </fieldset>
-                <footer>
+                        <label class="checkbox" style="color:#FFF;"><input type="checkbox" name="checkbox"><i></i>Jeg godkender <a href="#">brugerbetingelserne</a></label>
+                    
                     <button type="submit" class="button">Opret</button>
-                </footer>
+                     </section>
+                </fieldset>
+                
+                   
+              
             </form>
         </div>
     </aside>
