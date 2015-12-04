@@ -1,18 +1,41 @@
 ﻿@model MySensei.Models.LoginModel
 <h2>Log In</h2>
 @Html.ValidationSummary()
-@using (Html.BeginForm("Login","Login",FormMethod.Post))
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    ;
-    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
-    <div class="form-group">
-        <label>Name</label>
-        @Html.TextBoxFor(x => x.UserName, new {@class = "form-control"})
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        @Html.PasswordFor(x => x.Password, new {@class = "form-control"})
-    </div>
-    <button class="btn btn-primary" type="submit">Log In</button>
+    <aside class="sidebar" id="sidebar">
+        <div class="side-content">
+            <a href="#" class="close-menu">&#x02297;</a> <h3>LOGIN</h3>
+            <form action="" class="mform">
+
+                <fieldset>
+                    <section class="mform">
+                        <label class="input">
+                            <i class="icon-append icon-user"></i>
+                            @Html.TextBoxFor(x => x.UserName, new { @placeholder = "Brugernavn" })
+                            <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                        </label>
+                    </section>
+
+                    <section class="mform">
+                        <label class="input">
+                            <i class="icon-append icon-lock"></i>
+                            @Html.PasswordFor(x => x.Password, new { @placeholder = "Password" })
+                            <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                        </label>
+                    </section>
+
+                </fieldset>
+
+                <footer>
+                    <button type="submit" class="button">Login</button>
+                </footer>
+            </form>
+        </div>
+    </aside>
+
+
+
+    <button class="button" type="submit">Log In</button>
 }

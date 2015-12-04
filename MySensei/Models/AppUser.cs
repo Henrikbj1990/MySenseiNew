@@ -8,6 +8,7 @@ namespace MySensei.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Description { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }
     }

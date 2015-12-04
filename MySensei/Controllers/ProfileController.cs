@@ -43,7 +43,7 @@ namespace MySensei.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(string id, string firstname, string lastname, string username, string email, string password)
+        public async Task<ActionResult> Edit(string id, string firstname, string lastname, string description, string username, string email, string password)
         {
             //var currentUserId = User.Identity.GetUserId();
             var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
@@ -53,6 +53,7 @@ namespace MySensei.Controllers
             {
                 currentUser.FirstName = firstname;
                 currentUser.LastName = lastname;
+                currentUser.Description = description;
                 currentUser.UserName = username;
                 currentUser.Email = email;
                 IdentityResult validEmail = await manager.UserValidator.ValidateAsync(currentUser);

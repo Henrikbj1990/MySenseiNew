@@ -14,15 +14,12 @@
 </head>
 <body>
     <div id="wrapper" class="page-wrap">
-
         <header>
             <div class="container clearfix">
-
 
                 <a href="@Url.Action("Index", "Home")">
                     <img class="logo" src="@Url.Content("~/Content/img/logo.png")" />
                 </a>
-
                 <nav>
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -31,15 +28,17 @@
                     }
                     else if (!User.Identity.IsAuthenticated)
                     {
-                        @*@Html.Partial("_Login")*@
-                        <i class="icon-append icon-lock"></i>@Html.ActionLink("Log ind", "Login", "Account")
-                        <i class="icon-append icon-user"></i>@Html.ActionLink("Opret bruger", "Index", "SignUp")
+                        <i class="icon-append icon-lock"></i><a href="#sidebar">Login</a>
+                        <i class="icon-append icon-lock"></i><a href="#sidebarSignup">Opret Bruger</a>
+
+                        @*<i class="icon-append icon-lock"></i>@Html.ActionLink("Log ind", "Login", "Account")<i class="icon-append icon-lock"></i>*@
+                        @*<i class="icon-append icon-user"></i>@Html.ActionLink("Opret bruger", "Index", "SignUp")*@
                     }
                 </nav>
             </div>
         </header><!-- /header -->
-@*
-    @using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
+
+    @*@using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
     {
         <p>
             Søg efter kursus: @Html.TextBox("SearchString") <br />
@@ -50,17 +49,26 @@
             <li>@Html.ActionLink("Users", "Index", "Admin")</li>
                 <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
                 <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
+                </ul>
+
+        <p>
+            <br />
+            <input type="submit" value="Filter" />
+        </p>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>*@
 
+        @Html.Partial("_Login", new LoginModel())
+        @Html.Partial("_Signup", new CreateModel())
         <div id="main">
             <div id="content">
                 
-
                         @RenderBody()
-
             </div>
        
-
 
             <footer>
                 <div class="container center">
@@ -70,10 +78,92 @@
             
         </div><!-- #main -->
     </div> <!-- #wrapper -->
-
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     
     
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+@*<aside class="sidebar" id="sidebar">
+    <div class="side-content">
+        <a href="#" class="close-menu">&#x02297;</a> <h3>OPRET BRUGER</h3>
+        <form action="" class="mform">
+
+            <fieldset>
+                <section>
+                    <label class="input">
+                        <i class="icon-append icon-user"></i>
+                        <input type="text" placeholder="Brugernavn">
+                        <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                    </label>
+                </section>
+
+                <section>
+                    <label class="input">
+                        <i class="icon-append icon-envelope-alt"></i>
+                        <input type="text" placeholder="Email adresse">
+                        <b class="tooltip tooltip-bottom-right">Så vi kan verificere din email</b>
+                    </label>
+                </section>
+
+                <section>
+                    <label class="input">
+                        <i class="icon-append icon-lock"></i>
+                        <input type="password" placeholder="Password">
+                        <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                    </label>
+                </section>
+
+                <section>
+                    <label class="input">
+                        <i class="icon-append icon-lock"></i>
+                        <input type="password" placeholder="Gentag password">
+                        <b class="tooltip tooltip-bottom-right">Kun almindelige tegn og tal</b>
+                    </label>
+                </section>
+            </fieldset>
+
+            <fieldset>
+                <div class="row">
+                    <section class="col half">
+                        <label class="input">
+                            <input type="text" placeholder="Fornavn">
+                        </label>
+                    </section>
+                    <section class="col half">
+                        <label class="input">
+                            <input type="text" placeholder="Efternavn">
+                        </label>
+                    </section>
+                </div>
+
+                <section>
+                    <label class="select">
+                        <select>
+                            <option value="0" selected disabled>Køn</option>
+                            <option value="1">Mand</option>
+                            <option value="2">Kvinde</option>
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+
+                <section>
+                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jeg godkender <a href="#">brugerbetingelserne</a></label>
+
+                </section>
+            </fieldset>
+            <footer>
+                <button type="submit" class="button">Opret</button>
+            </footer>
+        </form>
+    </div>
+</aside>*@
