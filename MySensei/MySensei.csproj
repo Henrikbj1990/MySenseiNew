@@ -182,6 +182,9 @@
     <Content Include="Content\styles.css.map">
       <DependentUpon>styles.css</DependentUpon>
     </Content>
+    <Content Include="Content\form.css.map">
+      <DependentUpon>form.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\classie.js" />
