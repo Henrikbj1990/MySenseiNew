@@ -7,12 +7,6 @@
     <link href="~/Areas/Admin/Content/AdminStyles.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <style>
-        .container {
-            padding-top: 10px;
-        }
-        .validation-summary-errors {
-            color: #f00;
-        }
     </style>
 </head>
     <body class="container">
@@ -35,9 +29,23 @@
 </header>
 
 
-        <div class="container">
-            @RenderBody()
-        </div>
+    <div class="container">
+        <div id="main">
+            <div id="content">
+
+                @RenderBody()
+            </div>
+
+
+            <footer>
+                <div class="container center">
+                    <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert.</p>
+                </div>
+            </footer>
+
+        </div><!-- #main -->
+
+    </div>
 
 </div>
 

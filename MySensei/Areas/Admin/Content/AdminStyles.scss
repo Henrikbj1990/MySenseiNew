@@ -1,4 +1,5 @@
-﻿$dark : #3B3B3B;
+﻿@import "reset.css";
+$dark : #3B3B3B;
 $blue : #47b7b7;
 $yellow : #ffcb63;
 $light-grey : #efefef;
@@ -28,6 +29,11 @@ a:hover {color: $yellow; }
 #wrapper {
   width: 100%;
   margin: 0 auto; }
+
+#main {
+  background-color: #fff;
+  margin-top: 120px;
+ }
 
 .container {
   width: 90%;
@@ -80,3 +86,26 @@ header {
              }
              
  }
+
+table {
+    font-size:16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+ td, th {
+    border: 1px solid #efefef;
+    text-align: left;
+    padding: 8px;
+}
+
+ tr:nth-child(even){background-color: #f2f2f2}
+
+ th {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: $blue;
+    color: white;
+}
