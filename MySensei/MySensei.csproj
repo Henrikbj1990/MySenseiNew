@@ -145,12 +145,14 @@
     <Content Include="Areas\Admin\Content\AdminStyles.min.css">
       <DependentUpon>AdminStyles.css</DependentUpon>
     </Content>
+    <Content Include="Content\fontawesome.css" />
     <Content Include="Content\form.css">
       <DependentUpon>form.scss</DependentUpon>
     </Content>
     <Content Include="Content\form.min.css">
       <DependentUpon>form.css</DependentUpon>
     </Content>
+    <Content Include="Content\img\logo.png" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\styles.css">
       <DependentUpon>styles.scss</DependentUpon>
@@ -177,6 +179,9 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </Content>
     <Content Include="Content\form.scss" />
+    <Content Include="Content\styles.css.map">
+      <DependentUpon>styles.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\classie.js" />
@@ -229,6 +234,10 @@
     <Compile Include="Migrations\201511281451556_Tags.Designer.cs">
       <DependentUpon>201511281451556_Tags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512040854227_UserDesc.cs" />
+    <Compile Include="Migrations\201512040854227_UserDesc.Designer.cs">
+      <DependentUpon>201512040854227_UserDesc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -266,6 +275,7 @@
     <Content Include="Views\Courses\SearchCourses.cshtml" />
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Shared\_Signup.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -282,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511281451556_Tags.resx">
       <DependentUpon>201511281451556_Tags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512040854227_UserDesc.resx">
+      <DependentUpon>201512040854227_UserDesc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

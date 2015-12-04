@@ -29,15 +29,16 @@
                     else if (!User.Identity.IsAuthenticated)
                     {
                         <i class="icon-append icon-lock"></i><a href="#sidebar">Login</a>
+                        <i class="icon-append icon-lock"></i><a href="#sidebarSignup">Opret Bruger</a>
 
-                        @*<i class="icon-append icon-lock"></i>@Html.ActionLink("Log ind", "Login", "Account")*@<i class="icon-append icon-lock"></i>
-                        <i class="icon-append icon-user"></i>@Html.ActionLink("Opret bruger", "Index", "SignUp")
+                        @*<i class="icon-append icon-lock"></i>@Html.ActionLink("Log ind", "Login", "Account")<i class="icon-append icon-lock"></i>*@
+                        @*<i class="icon-append icon-user"></i>@Html.ActionLink("Opret bruger", "Index", "SignUp")*@
                     }
                 </nav>
             </div>
         </header><!-- /header -->
-@*
-    @using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
+
+    @*@using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
     {
         <p>
             Søg efter kursus: @Html.TextBox("SearchString") <br />
@@ -49,7 +50,7 @@
                 <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
                 <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
                 </ul>
-        *@
+
         <p>
             <br />
             <input type="submit" value="Filter" />
@@ -58,9 +59,10 @@
             <li></li>
             <li></li>
             <li></li>
-        </ul>
-        @Html.Partial("_Login", new LoginModel())
+        </ul>*@
 
+        @Html.Partial("_Login", new LoginModel())
+        @Html.Partial("_Signup", new CreateModel())
         <div id="main">
             <div id="content">
                 

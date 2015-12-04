@@ -196,7 +196,7 @@ header {
 	font-family:'Roboto Slab', serif;
 }
 
-#sidebar {
+.sidebar {
     section{padding:5px 0;}
 
 }
@@ -205,17 +205,17 @@ header {
 font-size:20px;	
 }
 
-#sidebar:target {
+.sidebar:target {
   width: 30%;
    padding: 0 15px 0 15px;
 }
 
-#sidebar:target + .page-wrap {
+.sidebar:target + .page-wrap {
   width: 100%;
   left: 30%;
 }
 
-#sidebar:target + .close-menu {
+.sidebar:target + .close-menu {
   display: block;
 }
 

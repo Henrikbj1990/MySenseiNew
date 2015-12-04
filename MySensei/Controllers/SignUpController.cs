@@ -16,7 +16,7 @@ namespace MySensei.Controllers
         // GET: SignUp
         public ActionResult Index()
         {
-            return View();
+            return PartialView("_Signup");
         }
 
         [HttpPost]
