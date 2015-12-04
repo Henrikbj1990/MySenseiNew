@@ -936,6 +936,44 @@ header {
 .s-height {
   min-height: 80px; }
 
+.profile-picture {
+  min-width: 15.5%;
+  margin-left: 2.5%;
+  padding: 0 1%;
+  float: left; }
+  .profile-picture img {
+    max-height: 200px; }
+
+.profile-content {
+  width: 38%;
+  padding: 0 1%;
+  float: left; }
+  .profile-content h2 {
+    color: #ffcb63;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 15px 0; }
+  .profile-content p {
+    text-transform: uppercase;
+    border: 1px solid #ffcb63;
+    margin-bottom: 10px;
+    padding: 5px; }
+
+.profile-courses {
+  background: #47b7b7;
+  margin-right: -30px !important;
+  width: 38%;
+  padding: 0 1%;
+  float: left; }
+  .profile-courses h2 {
+    text-align: center;
+    color: #ffcb63;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 15px 0; }
+
 @media all and (max-width: 1024px) {
   section h1 {
     font-size: 40px; }

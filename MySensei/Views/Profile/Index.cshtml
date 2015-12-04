@@ -4,24 +4,40 @@
 }
 <div class="main-content">
     <section style="margin-top:-80px;">
-        <div class="container">
-            
         
+            
+        <div class="profile-picture">
+            <img src="~/Content/img/profile_pic_blank.png" width:100px; />
+
+        </div>
+
+            <div class="profile-content">
+                <h2>Oplysninger</h2>
+
+                <h3>Navn</h3>
+               <p>@Model.FirstName @Model.LastName </p>
+
+                <h3>Brugernavn</h3>
+                <p>@Model.UserName</p>
+
+                <h3>Beskrivelse</h3>
+                <p>@Model.Description</p>
+
+                @Html.ActionLink("Edit Profile", "Edit")
+            </div>
+
+            <div class="profile-courses">
+
+                <h2>Tilmeldte kurser</h2>
 
             
-
-            @Model.FirstName
-
-            @Model.LastName
-
-            @Model.Description
-
-            @Html.ActionLink("Edit Profile", "Edit")
 
             @foreach (var course in Model.Courses)
             {
                 @course.Title
             }
-            </div>
+                </div>
+            <div class="clearfix"></div>
+            
     </section>
 </div>

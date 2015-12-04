@@ -313,7 +313,55 @@ font-size:20px;
     min-height:80px;
 }
 
+.profile-picture{
+    min-width:15.5%;
+    margin-left:2.5%;
+    padding:0 1%;
+    float:left;
 
+    img{
+        max-height:200px;
+    }
+}
+
+.profile-content{
+    width:38%;
+    padding:0 1%;
+    float:left;
+
+    h2{
+        
+        color:$yellow;
+        font-family:'Roboto Slab', serif;
+        font-size:18px;
+        text-transform:uppercase;
+        padding:15px 0;
+    }
+
+    p{
+        text-transform:uppercase;
+        border: 1px solid $yellow;
+        margin-bottom:10px;
+        padding:5px;
+    }
+}
+
+.profile-courses{
+    background:$blue;
+    margin-right:-30px!important;
+    width:38%;
+    padding:0 1%;
+    float:left;
+
+    h2{
+        text-align:center;
+        color:$yellow;
+        font-family:'Roboto Slab', serif;
+        font-size:18px;
+        text-transform:uppercase;
+        padding:15px 0;
+    }
+}
 
 @media all and (max-width: 1024px) {
     section {
