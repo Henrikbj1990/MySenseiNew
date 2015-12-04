@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
    }
 
+h1{
+    text-align:center;
+    font-size:2em;
+    color: $blue;
+}
+
 a {
   text-decoration: none;
   color: $blue;
@@ -157,6 +163,28 @@ table {
 .btn:hover{
     background: $blue !important;
     color:white;
+}
+
+@media all and (max-width: 1024px) {
+
+    }
+
+@media all and (max-width: 768px) {
+    .greyBox{
+        width:48%;
+        margin:1%;
+       
+    }
+}
+
+@media all and (max-width: 480px) {
+    #main{
+        margin-top:95px;
+    }
+
+    .greyBox{
+    }
+
 }
 
 

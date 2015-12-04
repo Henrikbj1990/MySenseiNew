@@ -12,6 +12,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #47b7b7;
+}
+
 a {
   text-decoration: none;
   color: #47b7b7;
@@ -162,6 +168,19 @@ th {
 .btn:hover {
   background: #47b7b7 !important;
   color: white;
+}
+
+@media all and (max-width: 768px) {
+  .greyBox {
+    width: 48%;
+    margin: 1%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  #main {
+    margin-top: 95px;
+  }
 }
 
 /*.users {
