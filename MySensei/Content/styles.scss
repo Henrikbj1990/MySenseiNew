@@ -1,5 +1,5 @@
 ﻿@import "reset.css";
-@import "form.css";
+@import "form.scss";
 @import "fontawesome.css";
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 
@@ -176,7 +176,28 @@ header {
   -moz-transition: width 0.3s ease;
   -o-transition: width 0.3s ease;
   transition: width 0.3s ease;
- 
+
+  .button{
+      width:100%;
+      margin-top:15px;
+      border:none;
+      height:35px;
+      background:$yellow;
+      color:#FFF;
+      font-weight:bold;
+  }
+
+  .button:hover{
+      background:$blue;
+  }
+
+  
+
+  .hr{
+      height:20px;
+      margin-top:10px;
+      border-top:1px solid $yellow;
+  }
 
 }
 
@@ -283,48 +304,68 @@ font-size:20px;
         z-index:-100;
 }
 
+.fbg{
+    background:url("img/bg_1024.png") no-repeat;
+    
+}
+
+.s-height{
+    min-height:80px;
+}
+
+
+
 @media all and (max-width: 1024px) {
     section {
         
         h1 {font-size:40px;}
         } 
     .split{
-        width:70%;
+        width:75%;
        
         form{
              margin-top:20px!important;
         }
-        .hr{
-            margin-top:40px;
-            margin-bottom:20px;
-            border-top:1px solid $yellow;}
+        
     }
-    #sidebar:target {
+    .sidebar:target {
   width: 50%;
    padding: 0 15px 0 15px;
  
+}
+    .s-height{
+    min-height:20px;
 }
   
 }
 
 @media all and (max-width: 768px) {
+
+    .fbg{
+    background:url("img/bg_768.png");
+    
+}
     .split { width:80%;
             
     }
 .sidebar {
   position: absolute;
 }
-#sidebar:target {
+.sidebar:target {
   width: 80%; 
 }
 .grid-4{
     width:46%;
     padding:0 1%;
     }
+
 }
 
 @media all and (max-width: 480px) {
-
+    .fbg{
+    background:none!important;
+    
+}
         section {
         padding: 30px 0;
         h1 {font-size:25px;}
@@ -368,7 +409,7 @@ font-size:20px;
        .small nav a {
            
         line-height: 25px; } 
-		#sidebar:target {
+		.sidebar:target {
        width: 90%;
        }
    }

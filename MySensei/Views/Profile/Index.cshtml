@@ -2,18 +2,26 @@
 @{
     ViewBag.Title = "Index";
 }
+<div class="main-content">
+    <section style="margin-top:-80px;">
+        <div class="container">
+            
+        
 
-<h2>Profil</h2>
+            
 
-@Html.ActionLink("Edit Profile","Edit")
+            @Model.FirstName
 
-@Model.FirstName
+            @Model.LastName
 
-@Model.LastName
+            @Model.Description
 
-@Model.Description
+            @Html.ActionLink("Edit Profile", "Edit")
 
-@foreach (var course in Model.Courses)
-{
-    @course.Title
-}
+            @foreach (var course in Model.Courses)
+            {
+                @course.Title
+            }
+            </div>
+    </section>
+</div>

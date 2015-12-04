@@ -154,6 +154,7 @@
 /* radios and checkboxes */
 /**/
 .mform .radio,
+.sidebar .checkbox
 .mform .checkbox {
   margin-bottom: 4px;
   padding-left: 27px;
@@ -163,6 +164,7 @@
   cursor: pointer; }
 
 .mform .radio:last-child,
+.sidebar .checkbox:last-child,
 .mform .checkbox:last-child {
   margin-bottom: 0; }
 
@@ -188,6 +190,7 @@
   border-radius: 50%; }
 
 .mform .radio input + i:after,
+.sidebar .checkbox input + i:after,
 .mform .checkbox input + i:after {
   position: absolute;
   opacity: 0;
@@ -204,6 +207,7 @@
   height: 5px;
   border-radius: 50%; }
 
+.sidebar .checkbox input + i:after,
 .mform .checkbox input + i:after {
   content: '\f00c';
   top: -1px;
@@ -214,6 +218,7 @@
   text-align: center; }
 
 .mform .radio input:checked + i:after,
+.sidebar .checkbox input:checked + i:after,
 .mform .checkbox input:checked + i:after {
   opacity: 1; }
 
@@ -507,6 +512,7 @@
 .mform .select select,
 .mform .textarea textarea,
 .mform .radio i,
+.sidebar .checkbox i,
 .mform .checkbox i,
 .mform .toggle i,
 .mform .icon-append,
@@ -557,6 +563,7 @@
 .mform .select:hover select,
 .mform .textarea:hover textarea,
 .mform .radio:hover i,
+.sidebar .checkbox:hover i
 .mform .checkbox:hover i,
 .mform .toggle:hover i {
   border-color: #47b7b7; }
@@ -575,6 +582,7 @@
 .mform .select select:focus,
 .mform .textarea textarea:focus,
 .mform .radio input:focus + i,
+.sidebar .checkbox input:focus + i,
 .mform .checkbox input:focus + i,
 .mform .toggle input:focus + i {
   border-color: #47b7b7; }
@@ -585,10 +593,12 @@
 .mform .radio input + i:after {
   background-color: #ffcb63; }
 
+.sidebar .checkbox input + i:after,
 .mform .checkbox input + i:after {
   color: #ffcb63; }
 
 .mform .radio input:checked + i,
+.sidebar .checkbox input:checked + i
 .mform .checkbox input:checked + i,
 .mform .toggle input:checked + i {
   border-color: #ffcb63; }

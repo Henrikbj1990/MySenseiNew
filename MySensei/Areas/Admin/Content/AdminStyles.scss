@@ -109,3 +109,67 @@ table {
     background-color: $blue;
     color: white;
 }
+
+ .greyBox {
+     background-color: $blue;
+     text-align:center;
+     width:28%;
+     float: left;
+     margin: 2%;
+     &:hover{
+         background-color:$dark;
+         transition:0.5s;
+     }
+
+     img{
+         width:80%;
+         -webkit-filter:invert(1);
+         filter:invert(1);
+
+     }
+
+     a{
+         color:$dark;
+         &:hover{
+             color:white;
+             transition: 0.15s;
+
+         }
+     }
+
+     
+ }
+
+ .clearfix {
+     clear:both;
+ }
+
+  .btn{
+    color:white;
+    background:$yellow;
+    font-weight:bold!important;
+    padding: 10px;
+    border: none;
+    height:35px;
+
+
+    }
+.btn:hover{
+    background: $blue !important;
+    color:white;
+}
+
+
+ /*.users {
+     background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
+     background-size: 100%;
+     background-repeat: no-repeat;
+ }
+
+ .roles {
+
+ }
+
+ .courses {
+
+ }*/
