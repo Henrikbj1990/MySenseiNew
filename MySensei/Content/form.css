@@ -360,8 +360,12 @@
   font: 300 15px/39px Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
+<<<<<<< HEAD
   cursor: pointer;
 }
+=======
+  cursor: pointer; }
+>>>>>>> 469da62326395c0aef690d2bde5f67599923236e
 
 /**/
 /* grid */
@@ -617,6 +621,12 @@
   margin-top: 10px;
   padding: 10px;
 }
+
+.sform .button {
+  background-color: #ffcb63;
+  border: none;
+  margin-top: 10px;
+  padding: 10px; }
 
 .mform .button {
   background-color: #ffcb63;
