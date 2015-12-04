@@ -5,34 +5,51 @@ body {
   font-family: Helvetica, sans serif;
   font-weight: 100;
   font-size: 16px;
-  line-height: 1.8; }
+  line-height: 1.8;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1; }
+  line-height: 1;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #47b7b7;
+}
 
 a {
   text-decoration: none;
-  color: #47b7b7; }
-  a .rev {
-    color: #ffcb63; }
-  a .rev:hover {
-    color: #47b7b7; }
+  color: #47b7b7;
+}
+
+a .rev {
+  color: #ffcb63;
+}
+
+a .rev:hover {
+  color: #47b7b7;
+}
 
 a:hover {
-  color: #ffcb63; }
+  color: #ffcb63;
+}
 
 #wrapper {
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 #main {
   background-color: #fff;
-  margin-top: 120px; }
+  margin-top: 120px;
+}
 
 .container {
   width: 90%;
   margin: 0 auto;
-  padding: 0 5%; }
+  padding: 0 5%;
+}
 
 header {
   width: 100%;
@@ -46,51 +63,138 @@ header {
   -webkit-transition: height 0.3s;
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
-  transition: height 0.3s; }
-  header .logo {
-    display: inline-block;
-    height: 25px;
-    margin-top: 25px;
-    float: left;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s; }
-  header nav {
-    width: auto;
-    display: inline-block;
-    float: right; }
-    header nav a {
-      line-height: 80px;
-      margin-left: 20px;
-      color: black;
-      font-weight: 400;
-      font-size: 14px;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s; }
-    header nav a:hover {
-      color: #47b7b7; }
+  transition: height 0.3s;
+}
+
+header .logo {
+  display: inline-block;
+  height: 25px;
+  margin-top: 25px;
+  float: left;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header nav {
+  width: auto;
+  display: inline-block;
+  float: right;
+}
+
+header nav a {
+  line-height: 80px;
+  margin-left: 20px;
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header nav a:hover {
+  color: #47b7b7;
+}
 
 table {
   font-size: 16px;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%; }
+  width: 100%;
+}
 
 td, th {
   border: 1px solid #efefef;
   text-align: left;
-  padding: 8px; }
+  padding: 8px;
+}
 
 tr:nth-child(even) {
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+}
 
 th {
   padding-top: 11px;
   padding-bottom: 11px;
   background-color: #47b7b7;
-  color: white; }
+  color: white;
+}
 
+.greyBox {
+  background-color: #47b7b7;
+  text-align: center;
+  width: 28%;
+  float: left;
+  margin: 2%;
+}
+
+.greyBox:hover {
+  background-color: #3B3B3B;
+  transition: 0.5s;
+}
+
+.greyBox img {
+  width: 80%;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.greyBox a {
+  color: #3B3B3B;
+}
+
+.greyBox a:hover {
+  color: white;
+  transition: 0.15s;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.btn {
+  color: white;
+  background: #ffcb63;
+  font-weight: bold !important;
+  padding: 10px;
+  border: none;
+  height: 35px;
+}
+
+.btn:hover {
+  background: #47b7b7 !important;
+  color: white;
+}
+
+@media all and (max-width: 768px) {
+  .greyBox {
+    width: 48%;
+    margin: 1%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  #main {
+    margin-top: 95px;
+  }
+}
+
+/*.users {
+     background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
+     background-size: 100%;
+     background-repeat: no-repeat;
+ }
+
+ .roles {
+
+ }
+
+ .courses {
+
+ }*/
+
+/*# sourceMappingURL=AdminStyles.css.map */
