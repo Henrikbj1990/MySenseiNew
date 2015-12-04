@@ -36,7 +36,6 @@
                     </form>
                 </div>
             </div>
-            <a href="#sidebar">Sidebar</a>
         </div>
     </section>
 
@@ -48,7 +47,8 @@
             @foreach (var course in Model)
             {
                 <div class="grid-4">
-                <h3 class="center">@course.Title</h3>
+                    <h3 class="center">@course.Title</h3>
+                    <p>@course.AppUser.FirstName</p>
                     <p>@course.Description</p>
                 </div>
             }
