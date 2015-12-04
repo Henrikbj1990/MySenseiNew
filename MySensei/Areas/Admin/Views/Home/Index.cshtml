@@ -1,19 +1,51 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<div class="panel panel-primary">
-    <div class="panel-heading">User Details</div>
-    <table class="table table-striped">
-        @foreach (string key in Model.Keys) {
-            <tr>
-                <td>@key</td>
-                <td>@Model[key]</td>
-            </tr>
-        }
-    </table>
+@*<div class="panel panel-primary">
+        <div class="panel-heading">User Details</div>
+        <table class="table table-striped">
+                @foreach (string key in Model.Keys) {
+                    <tr>
+                        <td>@key</td>
+                        <td>@Model[key]</td>
+                    </tr>
+                }
+            </table>
 
+    </div>*@
+
+
+
+<div class="greyBox">
+
+    <a href="@Url.Action("Index","Admin") ">
+        <img src="http://simpleicon.com/wp-content/uploads/multy-user.png">
+        <p>
+            Users
+        </p>
+    </a>
 </div>
+
+<div class="greyBox">
+    <a href="@Url.Action("Index", "RoleAdmin")">
+        <img src="http://simpleicon.com/wp-content/uploads/multy-user.png" />
+        <p>
+            Roles
+        </p>
+    </a>
+</div>
+
+<div class="greyBox">
+    <a href="@Url.Action("Index", "Courses")">
+        <img src="http://simpleicon.com/wp-content/uploads/multy-user.png" />
+        <p>
+            Courses
+        </p>
+    </a>
+</div>
+
+<div class="clearfix"></div>
+
 
 @Html.ActionLink("Sign Out ", "Logout", "Account")
