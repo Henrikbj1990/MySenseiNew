@@ -30,9 +30,21 @@ namespace MySensei.Infrastructure
             // modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); // Identity use pluralized table names
             // one-to-many relation between Course (1) and User (N)
             modelBuilder.Entity<Course>()
-            .HasRequired<AppUser>(s => s.AppUser)
-            .WithMany(s => s.Courses)
-            .HasForeignKey(s => s.AppUserID);
+                .HasRequired<AppUser>(t => t.CourseTeacher)
+                .WithMany(t => t.TeacherCourses)
+                .HasForeignKey(t => t.CourseTeacherId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Course>()
+                .HasMany(s => s.CourseStudents)
+                .WithMany(t => t.StudentCourses)
+                .Map(m =>
+                {
+                    m.ToTable("StudentCourses");
+                    m.MapLeftKey("CourseID");
+                    m.MapRightKey("AppUserID");
+                });
+
 
             modelBuilder.Entity<Course>()
             .HasMany(t => t.Tags)
