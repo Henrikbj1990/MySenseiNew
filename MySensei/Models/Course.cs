@@ -13,9 +13,14 @@ namespace MySensei.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int NumberOfLessons { get; set; }
-        public string AppUserID { get; set; }
+        public Course()
+        {
+            CourseStudents = new List<AppUser>();
+        }
+        public string CourseTeacherId { get; set; }
 
-        public virtual AppUser AppUser { get; set; }
+        public virtual AppUser CourseTeacher { get; set; }
+        public virtual ICollection<AppUser> CourseStudents { get; set; }
         public virtual List<Tag> Tags { get; set; }
     }
 }

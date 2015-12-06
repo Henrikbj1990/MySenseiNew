@@ -25,8 +25,8 @@
                         else
                         {
                             <p>
-                                @string.Join(", ", role.Users.Select(x =>Html. GetUserName(x.UserId)))
-                        </p>
+                                @string.Join(", ", role.Users.Select(x => Html.GetUserName(x.UserId)))
+                            </p>
                         }
                     </td>
                     <td>
@@ -37,6 +37,7 @@
                                 Delete
                             </button>
                         }
+
                     </td>
                 </tr>
             }

@@ -145,6 +145,7 @@
     <Content Include="Areas\Admin\Content\AdminStyles.min.css">
       <DependentUpon>AdminStyles.css</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Content\reset.css" />
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\form.css">
       <DependentUpon>form.scss</DependentUpon>
@@ -241,6 +242,10 @@
     <Compile Include="Migrations\201512040854227_UserDesc.Designer.cs">
       <DependentUpon>201512040854227_UserDesc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512051037564_CourseRoles.cs" />
+    <Compile Include="Migrations\201512051037564_CourseRoles.Designer.cs">
+      <DependentUpon>201512051037564_CourseRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -298,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512040854227_UserDesc.resx">
       <DependentUpon>201512040854227_UserDesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512051037564_CourseRoles.resx">
+      <DependentUpon>201512051037564_CourseRoles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

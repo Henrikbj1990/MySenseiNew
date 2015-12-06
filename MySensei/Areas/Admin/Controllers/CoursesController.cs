@@ -22,7 +22,7 @@ namespace MySensei.Areas.Admin.Controllers
         // GET: Courses
         public ActionResult Index()
         {
-            var courses = db.Courses.Include(c => c.AppUser);
+            var courses = db.Courses.Include(c => c.CourseTeacher);
             return View(courses.ToList());
         }
 
@@ -134,7 +134,7 @@ namespace MySensei.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int? CourseID, string[] selectedTags)
         {
-            var courseToUpdate = db.Courses.Include(c => c.AppUser).Include(c => c.Tags).Where(c => c.CourseID == CourseID).Single();
+            var courseToUpdate = db.Courses.Include(c => c.CourseTeacher).Include(c => c.Tags).Where(c => c.CourseID == CourseID).Single();
             if (TryUpdateModel(courseToUpdate, "", new string[] { "Title", "Description", "StartDate", "EndDate", "NumberOfLessons", "AppUserID" }))
             {
                 try
