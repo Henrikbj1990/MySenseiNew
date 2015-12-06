@@ -20,9 +20,9 @@ namespace MySensei.Models
             return db.Courses.ToList();
         }
 
-        internal Course GetCourseById(int id)
+        internal Course GetCourseById(int courseId)
         {
-            return db.Courses.FirstOrDefault(x => x.CourseID == id);
+            return db.Courses.FirstOrDefault(x => x.CourseID == courseId);
         }
 
         public IQueryable<Course> SearchCourses(string searchString)

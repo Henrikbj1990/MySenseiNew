@@ -38,28 +38,6 @@
             </div>
         </header><!-- /header -->
 
-    @*@using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post))
-    {
-        <p>
-            Søg efter kursus: @Html.TextBox("SearchString") <br />
-            <input type="submit" value="Filter" />
-        </p>
-    }
-    <ul>
-            <li>@Html.ActionLink("Users", "Index", "Admin")</li>
-                <li>@Html.ActionLink("Roles", "Index", "RoleAdmin")</li>
-                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
-                </ul>
-
-        <p>
-            <br />
-            <input type="submit" value="Filter" />
-        </p>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>*@
 
         @Html.Partial("_Login", new LoginModel())
         @Html.Partial("_Signup", new CreateModel())

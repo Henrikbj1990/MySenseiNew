@@ -24,5 +24,11 @@ namespace MySensei.Controllers
             return View(_repository.SearchCourses(SearchString).ToList());
         }
 
+        public ActionResult SingleCourse(int courseId)
+        {
+            var course = _repository.GetCourseById(courseId);
+            return View(course);
+        }
+
     }
 }

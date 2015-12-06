@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using MySensei.Infrastructure;
 using MySensei.Models;
+using MySensei.ViewModels;
 
 namespace MySensei.Controllers
 {
@@ -95,6 +96,44 @@ namespace MySensei.Controllers
             }
             return View();
         }
+
+
+        public ActionResult AddCourse()
+        {
+            var course = new Course();
+            course.Tags = new List<Tag>();
+            PopulateTagsData(course);
+            return View(course);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddCourse([Bind(Include = "CourseID,Title,Description,StartDate,EndDate,NumberOfLessons,CourseTeacherId")] Course course, string[] selectedTags)
+        {
+            if (selectedTags != null)
+            {
+                course.Tags = new List<Tag>();
+                foreach (var tag in selectedTags)
+                {
+                    var tagToAdd = db.Tags.Find(int.Parse(tag));
+                    course.Tags.Add(tagToAdd);
+                }
+            }
+
+            var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            course.CourseTeacherId = currentUser.Id;
+            if (ModelState.IsValid)
+            {
+                db.Courses.Add(course);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "Username", course.AppUserID);
+            return View(course);
+        }
+
+
         private void AddErrorsFromResult(IdentityResult result)
         {
             foreach (string error in result.Errors)
@@ -109,6 +148,22 @@ namespace MySensei.Controllers
             {
                 return HttpContext.GetOwinContext().GetUserManager<AppUserManager>();
             }
+        }
+        private void PopulateTagsData(Course course)
+        {
+            var allTags = db.Tags;
+            var coursesTags = new HashSet<int>(course.Tags.Select(t => t.TagID));
+            var viewModel = new List<AssignedTagData>();
+            foreach (var tag in allTags)
+            {
+                viewModel.Add(new AssignedTagData
+                {
+                    TagID = tag.TagID,
+                    TagName = tag.TagName,
+                    Assigned = coursesTags.Contains(tag.TagID)
+                });
+            }
+            ViewBag.Tags = viewModel;
         }
     }
 }

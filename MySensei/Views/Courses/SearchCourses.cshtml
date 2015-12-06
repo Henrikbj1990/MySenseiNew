@@ -9,4 +9,5 @@
 @foreach (var course in Model)
 {
     @course.Title
+    @Html.ActionLink("Se kurus", "SingleCourse", new { courseId = course.CourseID })
 }
