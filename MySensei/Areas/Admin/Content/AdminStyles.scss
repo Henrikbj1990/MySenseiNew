@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
    }
 
+h1{
+    text-align:center;
+    font-size:2em;
+    color: $blue;
+}
+
 a {
   text-decoration: none;
   color: $blue;
@@ -109,3 +115,89 @@ table {
     background-color: $blue;
     color: white;
 }
+
+ .greyBox {
+     background-color: $blue;
+     text-align:center;
+     width:28%;
+     float: left;
+     margin: 2%;
+     &:hover{
+         background-color:$dark;
+         transition:0.5s;
+     }
+
+     img{
+         width:80%;
+         -webkit-filter:invert(1);
+         filter:invert(1);
+
+     }
+
+     a{
+         color:$dark;
+         &:hover{
+             color:white;
+             transition: 0.15s;
+
+         }
+     }
+
+     
+ }
+
+ .clearfix {
+     clear:both;
+ }
+
+  .btn{
+    color:white;
+    background:$yellow;
+    font-weight:bold!important;
+    padding: 10px;
+    border: none;
+    height:35px;
+
+
+    }
+.btn:hover{
+    background: $blue !important;
+    color:white;
+}
+
+@media all and (max-width: 1024px) {
+
+    }
+
+@media all and (max-width: 768px) {
+    .greyBox{
+        width:48%;
+        margin:1%;
+       
+    }
+}
+
+@media all and (max-width: 480px) {
+    #main{
+        margin-top:95px;
+    }
+
+    .greyBox{
+    }
+
+}
+
+
+ /*.users {
+     background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
+     background-size: 100%;
+     background-repeat: no-repeat;
+ }
+
+ .roles {
+
+ }
+
+ .courses {
+
+ }*/

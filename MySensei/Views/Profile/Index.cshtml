@@ -3,26 +3,45 @@
 @{
     ViewBag.Title = "Index";
 }
+<div class="main-content">
+    <section style="margin-top:-80px;">
+        
+            
+        <div class="profile-picture">
+            <img src="~/Content/img/profile_pic_blank.png" width:100px; />
 
-<h2>Profil</h2>
+        </div>
 
-@Html.ActionLink("Edit Profile","Edit")
+            <div class="profile-content">
+                <h2>Oplysninger</h2>
 
-@Model.FirstName
+                <h3>Navn</h3>
+               <p>@Model.FirstName @Model.LastName </p>
 
-@Model.LastName
+                <h3>Brugernavn</h3>
+                <p>@Model.UserName</p>
 
-@Model.Description
+                <h3>Beskrivelse</h3>
+                <p>@Model.Description</p>
+
+                @Html.ActionLink("Edit Profile", "Edit")
+            </div>
+
+            <div class="profile-courses">
+
+                <h2>Tilmeldte kurser</h2>
+
+
 
 <div>
     <p>Deltager i kursus:</p>
     @foreach (var course in Model.StudentCourses)
-    {
-        @course.Title
+{
+    @course.Title
         foreach (var student in course.CourseStudents)
          {
              @student.UserName
-         }
+}
     }
 
 </div>
