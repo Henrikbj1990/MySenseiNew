@@ -153,7 +153,12 @@
     <Content Include="Content\form.min.css">
       <DependentUpon>form.css</DependentUpon>
     </Content>
+    <Content Include="Content\img\AdminLogo.png" />
+    <Content Include="Content\img\bg_1024.png" />
+    <Content Include="Content\img\bg_480.png" />
+    <Content Include="Content\img\bg_768.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\profile_pic_blank.png" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\styles.css">
       <DependentUpon>styles.scss</DependentUpon>
