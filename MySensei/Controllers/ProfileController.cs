@@ -30,7 +30,7 @@ namespace MySensei.Controllers
             return View(currentUser);
         }
 
-        public async Task<ActionResult> Edit()
+        public async Task<ActionResult> EditProfile()
         {
             var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
             var currentUser = manager.FindById(User.Identity.GetUserId());
@@ -45,7 +45,7 @@ namespace MySensei.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(string id, string firstname, string lastname, string description, string username, string email, string password)
+        public async Task<ActionResult> EditProfile(string id, string firstname, string lastname, string description, string username, string email, string password)
         {
             //var currentUserId = User.Identity.GetUserId();
             var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
@@ -133,13 +133,13 @@ namespace MySensei.Controllers
             return View(course);
         }
 
-        public ActionResult EditCourse(int? id)
+        public ActionResult EditCourse(int? courseId)
         {
-            if (id == null) { return new HttpStatusCodeResult(HttpStatusCode.BadRequest); }
+            if (courseId == null) { return new HttpStatusCodeResult(HttpStatusCode.BadRequest); }
             //Course course = db.Courses.Find(id);
             Course course = db.Courses
             .Include(c => c.Tags)
-            .Where(c => c.CourseID == id)
+            .Where(c => c.CourseID == courseId)
             .Single();
             PopulateTagsData(course);
 
@@ -150,9 +150,9 @@ namespace MySensei.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditCourse(int? courseID, string[] selectedTags)
+        public ActionResult EditCourse(int? courseId, string[] selectedTags)
         {
-            var courseToUpdate = db.Courses.Include(c => c.CourseTeacher).Include(c => c.Tags).Where(c => c.CourseID == courseID).Single();
+            var courseToUpdate = db.Courses.Include(c => c.CourseTeacher).Include(c => c.Tags).Where(c => c.CourseID == courseId).Single();
             if (TryUpdateModel(courseToUpdate, "", new string[] { "Title", "Description", "StartDate", "EndDate", "NumberOfLessons", "CourseTeacherId" }))
             {
                 try

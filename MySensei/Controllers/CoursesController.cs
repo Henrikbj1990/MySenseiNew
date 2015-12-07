@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,13 +34,29 @@ namespace MySensei.Controllers
             return View(_repository.GetCourseById(courseId));
         }
 
-        [HttpPost]
         public ActionResult JoinCourse(int courseId)
         {
             var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
             var currentUser = manager.FindById(User.Identity.GetUserId());
 
-            return View("SingleCourse", courseId);
+            
+            var currentCourse = db.Courses.Where(c => c.CourseID == courseId).FirstOrDefault();
+
+
+            if (currentUser.Id == currentCourse.CourseTeacherId)
+            {
+                string sameUserError = "Du kan ikke tilmelde dig til dit eget kursus";
+                return View("SingleCourse", sameUserError);
+            }
+
+
+            if (ModelState.IsValid)
+            {
+                currentCourse.CourseStudents.Add(currentUser);                
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View("Index");
         }
 
     }
