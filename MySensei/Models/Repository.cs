@@ -14,6 +14,7 @@ namespace MySensei.Models
     {
         private AppIdentityDbContext db = new AppIdentityDbContext();
 
+        
         // GET: Courses
         public IEnumerable<Course> GetCourses()
         {
@@ -23,6 +24,11 @@ namespace MySensei.Models
         internal Course GetCourseById(int courseId)
         {
             return db.Courses.FirstOrDefault(x => x.CourseID == courseId);
+        }
+
+        internal AppUser GetProfileById(string profileId)
+        {
+            return db.Users.FirstOrDefault(x => x.Id == profileId);
         }
 
         public IQueryable<Course> SearchCourses(string searchString)

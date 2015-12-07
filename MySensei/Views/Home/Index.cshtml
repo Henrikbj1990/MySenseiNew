@@ -51,7 +51,7 @@
                 {
                     <div class="grid-4">
                         <h3 class="center">@course.Title</h3>
-                        <p>@course.CourseTeacher.FirstName</p>
+                        <p>@Html.ActionLink(course.CourseTeacher.UserName, "PublicProfile", "Profile", new { profileId = course.CourseTeacher.Id }, null)</p>
                         <p>@course.Description</p>
                         @Html.ActionLink("Se kursus", "SingleCourse", "Courses",  new { courseId = course.CourseID }, null)
                     </div>

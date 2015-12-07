@@ -15,21 +15,37 @@ using MySensei.ViewModels;
 
 namespace MySensei.Controllers
 {
-    [Authorize]
+
     public class ProfileController : Controller
     {
+        private readonly Repository _repository = new Repository();
         private AppIdentityDbContext db = new AppIdentityDbContext();
 
         // GET: Profile
-
-        public ActionResult Index(int? userId)
+        [Authorize]
+        public ActionResult Index()
         {
             //var currentUserId = User.Identity.GetUserId();
             var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
             var currentUser = manager.FindById(User.Identity.GetUserId());
+
             return View(currentUser);
+
         }
 
+        [AllowAnonymous]
+        public ActionResult PublicProfile(string profileId)
+        {
+            var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            if (currentUser != null && currentUser.Id == profileId)
+            {
+                View("Index", currentUser);
+            }
+            return View(_repository.GetProfileById(profileId));
+
+        }
+        [Authorize]
         public async Task<ActionResult> EditProfile()
         {
             var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
@@ -43,7 +59,7 @@ namespace MySensei.Controllers
                 return RedirectToAction("Index");
             }
         }
-
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult> EditProfile(string id, string firstname, string lastname, string description, string username, string email, string password)
         {
@@ -98,7 +114,7 @@ namespace MySensei.Controllers
             return View();
         }
 
-
+        [Authorize]
         public ActionResult AddCourse(string courseTitle)
         {
             ViewBag.courseTitle = courseTitle;
@@ -134,7 +150,7 @@ namespace MySensei.Controllers
         //    return View(course);
         //}
 
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AddCourse([Bind(Include = "CourseID,Title,Description,StartDate,EndDate,NumberOfLessons,CourseTeacherId")] Course course, string[] selectedTags)
@@ -160,7 +176,7 @@ namespace MySensei.Controllers
             }
             return View(course);
         }
-
+        [Authorize]
         public ActionResult EditCourse(int? courseId)
         {
             if (courseId == null) { return new HttpStatusCodeResult(HttpStatusCode.BadRequest); }
@@ -175,7 +191,7 @@ namespace MySensei.Controllers
 
             return View(course);
         }
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditCourse(int? courseId, string[] selectedTags)

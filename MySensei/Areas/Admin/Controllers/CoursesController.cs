@@ -41,18 +41,12 @@ namespace MySensei.Areas.Admin.Controllers
             return View(course);
         }
 
-        #region CREATE
 
         // GET: Courses/Create
         public ActionResult Create()
         {
             var course = new Course();
             course.Tags = new List<Tag>();
-            ViewBag.AppUserID = new SelectList(
-            UserManager.Users
-            .Where(u => u.Roles.Select(r => r.RoleId)
-            .Contains("ba12d449-a2a1-4a28-978f-d9f9f0f76374"))
-            .ToList(), "Id", "UserName");
             PopulateTagsData(course);
             return View(course);
         }
@@ -79,12 +73,9 @@ namespace MySensei.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "Username", course.AppUserID);
             return View(course);
         }
 
-
-        #endregion
 
 
         private AppUserManager UserManager
@@ -116,13 +107,8 @@ namespace MySensei.Areas.Admin.Controllers
             PopulateTagsData(course);
 
             if (course == null) { return HttpNotFound(); }
-            //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", “UserName", course.AppUserID);
 
-            var roleId = RoleManager.FindByName("Employees").Id;
-            ViewBag.AppUserID = new SelectList(UserManager.Users
-            .Where(u => u.Roles.Select(r => r.RoleId)
-            .Contains(roleId))
-            .ToList(), "Id", "UserName");
+
 
             return View(course);
         }
@@ -135,7 +121,7 @@ namespace MySensei.Areas.Admin.Controllers
         public ActionResult Edit(int? CourseID, string[] selectedTags)
         {
             var courseToUpdate = db.Courses.Include(c => c.CourseTeacher).Include(c => c.Tags).Where(c => c.CourseID == CourseID).Single();
-            if (TryUpdateModel(courseToUpdate, "", new string[] { "Title", "Description", "StartDate", "EndDate", "NumberOfLessons", "AppUserID" }))
+            if (TryUpdateModel(courseToUpdate, "", new string[] { "Title", "Description", "StartDate", "EndDate", "NumberOfLessons", "CourseTeacherId" }))
             {
                 try
                 {
@@ -149,15 +135,10 @@ namespace MySensei.Areas.Admin.Controllers
             }
 
             // Instructors dropdown list
-            ViewBag.AppUserID = new SelectList(
-            UserManager.Users
-            .Where(u => u.Roles.Select(r => r.RoleId)
-            .Contains("ba12d449-a2a1-4a28-978f-d9f9f0f76374"))
-            .ToList(), "Id",
-            "UserName");
             // Tags check boxes
             PopulateTagsData(courseToUpdate);
-            return View(courseToUpdate);
+            return View(courseToUpdate);
+
         }
 
         // GET: Courses/Delete/5
@@ -232,7 +213,8 @@ namespace MySensei.Areas.Admin.Controllers
                     }
                 }
             }
-        }
+        }
+
 
         protected override void Dispose(bool disposing)
         {

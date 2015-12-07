@@ -348,6 +348,7 @@
     <Content Include="Views\Courses\SingleCourse.cshtml" />
     <Content Include="Views\Profile\EditCourse.cshtml" />
     <Content Include="Views\Profile\EditProfile.cshtml" />
+    <Content Include="Views\Profile\PublicProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,56 @@
+﻿@using MySensei.ViewModels
+@model MySensei.Models.AppUser
+@{
+    ViewBag.Title = Model.UserName + "'s Profil";
+}
+<div class="main-content">
+    <section style="margin-top: -80px;">
+
+
+        <div class="profile-picture">
+            <img src="~/Content/img/profile_pic_blank.png" />
+
+        </div>
+
+        <div class="profile-content">
+            <h2>@Model.FirstName @Model.LastName</h2>
+
+            <h3>Brugernavn</h3>
+            <p>@Model.UserName</p>
+
+            <h3>Beskrivelse</h3>
+            <p>@Model.Description</p>
+            
+        </div>
+
+        <div class="profile-courses">
+
+            <h2>Tilmeldte kurser</h2>
+
+            <div class="row">
+
+                @foreach (var course in Model.StudentCourses)
+                {
+                    <div class="grid-3">
+                        <h3> @course.Title</h3>
+                        @course.CourseTeacher.UserName
+                    </div>
+                }
+            </div>
+
+            <div class="row">
+                <div class="clearfix"></div>
+                <h2>Instruerer kursus</h2>
+                @foreach (var course in Model.TeacherCourses)
+                {
+                    <div class="grid-3">
+                        <h3>@course.Title</h3>
+                    </div>
+                }
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+    </section>
+    <div class="clearfix"></div>
+</div>

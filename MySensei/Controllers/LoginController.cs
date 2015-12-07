@@ -34,7 +34,9 @@ namespace MySensei.Controllers
         public async Task<ActionResult> Login(LoginModel details, string returnUrl = "/Home")
         {
             if (string.IsNullOrEmpty(returnUrl))
-                returnUrl = "/Home";
+            {
+                returnUrl = "/Home";                
+            }
 
 
             if (ModelState.IsValid)
