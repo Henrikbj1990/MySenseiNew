@@ -289,6 +289,8 @@
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Shared\_Signup.cshtml" />
+    <Content Include="Views\Profile\AddCourse.cshtml" />
+    <Content Include="Views\Courses\SingleCourse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

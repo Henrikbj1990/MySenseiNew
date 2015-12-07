@@ -11,50 +11,52 @@
                 
                 <div class="split">
                     <p class="s-height">Jeg vil gerne finde en Sensei der kan lære mig at . .</p>
-                    <form action="" class="sform">
+                    @using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post, new { @class = "sform" }))
+        {
                         <fieldset class="">
-                                <label class="input">
-
-                                    <input type="text" placeholder=".. Spille guitar">
-                                </label>
-                                <button type="submit" class="button s-btn">Find Sensei</button>
-                        </fieldset>
-                    </form>
-                </div>
-                <div class="split">
-                    <div class="hr"></div>
-                    <p class="s-height">Jeg vil gerne blive en Sensei der kan lære andre at . .</p>
-                    <form action="" class="sform">
-                        <fieldset>
-                            
                             <label class="input">
-                              
-                                <input type="text" placeholder=".. Tegne">
+                                @Html.TextBox("SearchString", null, new { @placeholder = ".. Spille guitar" })
                             </label>
-                            <button type="submit" class="button s-btn">Bliv Sensei</button>
+                            <button type="submit" class="button s-btn">Find Sensei</button>
                         </fieldset>
-                    </form>
+        }
+                </div>
+
+                    <div class="split">
+                        <div class="hr"></div>
+                        <p class="s-height">Jeg vil gerne blive en Sensei der kan lære andre at . .</p>
+                        @using (Html.BeginForm("AddCourse", "Profile", FormMethod.Post, new {@class = "sform"}))
+                        {
+                            <fieldset>
+
+                                <label class="input">
+                                    @Html.TextBox("SearchString", null, new { @placeholder = ".. Tegne" })
+                                </label>
+                                <button type="submit" class="button s-btn">Bliv Sensei</button>
+                            </fieldset>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="clearfix"></div>
-    </section>
-
-    <div class="clearfix"></div>
-    <section class="bluebg" style="margin-top:-10px;">
-        <div class="container">
-            <h1 class="center">Nyeste kurser</h1>
-            <div class="row">
-            @foreach (var course in Model)
-            {
-                <div class="grid-4">
-                    <h3 class="center">@course.Title</h3>
-                    <p>@course.CourseTeacher.FirstName</p>
-                    <p>@course.Description</p>
-                </div>
-            }
-                </div>
             <div class="clearfix"></div>
-        </div>
-    </section>
-</div>
+        </section>
+
+        <div class="clearfix"></div>
+        <section class="bluebg" style="margin-top:-10px;">
+            <div class="container">
+                <h1 class="center">Nyeste kurser</h1>
+                <div class="row">
+                @foreach (var course in Model)
+                {
+                    <div class="grid-4">
+                        <h3 class="center">@course.Title</h3>
+                        <p>@course.CourseTeacher.FirstName</p>
+                        <p>@course.Description</p>
+                        @Html.ActionLink("Se kursus", "SingleCourse", "Courses",  new { courseId = course.CourseID }, null)
+                    </div>
+                }
+                    </div>
+                <div class="clearfix"></div>
+            </div>
+        </section>
+    </div>
