@@ -409,11 +409,29 @@ font-size:20px;
     width:46%;
     padding:0 1%;
     }
+.profile-content{width:50%;}
 
+.profile-courses{
+    width: 100%;
+
+}
 }
 
 @media all and (max-width: 480px) {
-    .fbg{
+   .profile-picture{
+       width:100%;
+       margin: 0 auto;
+
+       img{
+           margin: 0 auto;
+       }
+       }
+       .profile-content{width:100%;
+                        
+       }
+   
+    
+     .fbg{
     background:none!important;
     
 }

@@ -1,22 +1,19 @@
 ﻿@using MySensei.ViewModels
 @model MySensei.Models.AppUser
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Min Profil";
 }
 <div class="main-content">
 <section style="margin-top: -80px;">
 
 
     <div class="profile-picture">
-        <img src="~/Content/img/profile_pic_blank.png" style="width:100px;" />
+        <img src="~/Content/img/profile_pic_blank.png" />
 
     </div>
 
     <div class="profile-content">
-        <h2>Oplysninger</h2>
-
-        <h3>Navn</h3>
-        <p>@Model.FirstName @Model.LastName </p>
+        <h2>@Model.FirstName @Model.LastName</h2>
 
         <h3>Brugernavn</h3>
         <p>@Model.UserName</p>
@@ -24,17 +21,15 @@
         <h3>Beskrivelse</h3>
         <p>@Model.Description</p>
 
-        @Html.ActionLink("Edit Profile", "Edit")
+        @Html.ActionLink("Ret Profil", "Edit")
     </div>
 
     <div class="profile-courses">
 
         <h2>Tilmeldte kurser</h2>
 
-
-
         <div>
-            <p>Deltager i kursus:</p>
+            
             @foreach (var course in Model.StudentCourses)
             {
                 @course.Title
@@ -45,9 +40,9 @@
             }
 
         </div>
-
+        
         <div>
-            <p>Instruerer kursus:</p>
+            <h2>Instruerer kursus</h2>
             @foreach (var course in Model.TeacherCourses)
             {
                 @course.Title
@@ -149,4 +144,5 @@
                 }*@
     </div>
 </section>
+    <div class="clearfix"></div>
         </div>

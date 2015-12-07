@@ -999,9 +999,20 @@ header {
     width: 80%; }
   .grid-4 {
     width: 46%;
-    padding: 0 1%; } }
+    padding: 0 1%; }
+  .profile-content {
+    width: 50%; }
+  .profile-courses {
+    width: 100%; } }
 
 @media all and (max-width: 480px) {
+  .profile-picture {
+    width: 100%;
+    margin: 0 auto; }
+    .profile-picture img {
+      margin: 0 auto; }
+  .profile-content {
+    width: 100%; }
   .fbg {
     background: none !important; }
   section {
