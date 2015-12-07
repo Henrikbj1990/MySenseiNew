@@ -21,8 +21,8 @@
         <h3>Beskrivelse</h3>
         <p>@Model.Description</p>
 
-        @Html.ActionLink("Ret Profil", "EditProfile")
-        @Html.ActionLink("Opret Kursus", "AddCourse", "Profile")
+        @Html.ActionLink("Rediger Profil", "EditProfile")
+        
     </div>
 
     <div class="profile-courses">
@@ -41,16 +41,18 @@
         </div>
 
         <div class="row">
-        
+            <div class="clearfix"></div>
             <h2>Instruerer kursus</h2>
             @foreach (var course in Model.TeacherCourses)
             {
                 <div class="grid-3">
                     <h3>@course.Title</h3>
-                   <a href="#">Ændre</a>
+                   @Html.ActionLink("Rediger","EditCourse","Profile" , new {courseId = course.CourseID }, null)
                             </div>
                                     }
                             </div>
+        <div class="clearfix"></div>
+        @Html.ActionLink("Opret Kursus", "AddCourse", "Profile", null, new {@class="olink" })
 
     </div>
 </section>

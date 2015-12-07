@@ -310,7 +310,6 @@ font-size:20px;
 }
 
 
-
 .center {
 	margin: 0 auto;
 	padding-top: 15px;
@@ -329,6 +328,7 @@ font-size:20px;
     background: $blue !important;
     color:#fff;
 }
+
 
 .behind{
         z-index:-100;
@@ -395,6 +395,25 @@ font-size:20px;
         padding:15px 0;
     }
 }
+.olink{
+    color:$yellow;
+ 
+}
+.edit{
+    width:700px;
+    background:$dark;
+    margin:0 auto;
+    padding:30px;
+
+    input, textarea{
+        width:100%;
+        border:2px solid $yellow;
+        color:$dark;
+
+    }
+    textarea{min-height:200px;}
+   
+}
 
 @media all and (max-width: 1024px) {
     section {
@@ -422,15 +441,21 @@ font-size:20px;
         width:80%;
     }
     .profile-courses{
-    width: 100%;
-
-   
+    width: 90%;
+    
+      
 }
+    .profile-picture{
+        width:15%;
+    }
   
 }
 
 @media all and (max-width: 768px) {
-
+    .edit{
+    width:500px;
+    padding:10px;
+    }
     .fbg{
     background:url("img/bg_768.png");
     
@@ -448,15 +473,21 @@ font-size:20px;
     width:46%;
     padding:0 1%;
     }
-.profile-content{width:50%;}
-
+.profile-content{width:90%;
+                 clear:left;
+}
 
 }
 
+
 @media all and (max-width: 480px) {
-   .profile-picture{
+  .edit{
+    width:98%;
+    padding:1%;
+    }
+     .profile-picture{
        width:100%;
-       margin: 0 auto;
+       margin: 0;
 
        img{
            margin: 0 auto;
@@ -528,7 +559,7 @@ font-size:20px;
     margin:0 auto;
     }
 .grid-3{
-    width:48%;
+    width:90%;
 }
 }
 

@@ -1,104 +1,95 @@
 ﻿@model MySensei.Models.Course
-
 @{
-    ViewBag.Title = "EditCourse";
+    ViewBag.Title = "Rediger kursus";
 }
+<section style="margin-top:-40px;">
+    <section class="edit">
+        <h1>Rediger kursus</h1>
 
-<h2>Edit</h2>
+        @using (Html.BeginForm("EditCourse", "Profile", FormMethod.Post, new { @class = "mform" }))
+        {
+            @Html.AntiForgeryToken()
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.CourseID)
+            <fieldset>
+                <section class="mform">
+                    <label class="input">Titel</label>
 
-    <div class="form-horizontal">
-        <h4>Course</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.CourseID)
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "mform" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                </section>
+                <section class="mform">
+                    <label class="input">Beskrivelse</label>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "mform" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </section>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NumberOfLessons, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NumberOfLessons, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NumberOfLessons, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.AppUserID, "AppUserID", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("AppUserID", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.AppUserID, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <table>
-                    <tr>
-                        @{ int cnt = 0;
-                         List<MySensei.ViewModels.AssignedTagData> tags = ViewBag.Tags;
-                         foreach (var tag in tags)
-                         {
-                             if (cnt++ % 3 == 0)
-                             {
-                                 @:</tr><tr>
+                <section class="mform">
+                    
+                    <label class="input">Start Dato</label>
+                    
+                        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "mform" } })
+                        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                    
+                </section>
+                <section class="mform">
+                    <label class="input">Slut Dato</label>
+                  
+                        @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "mform" } })
+                        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                    
+                </section>
+                <section class="mform">
+                    <label class="input">Antal lektioner</label>
+                    
+                        @Html.EditorFor(model => model.NumberOfLessons, new { htmlAttributes = new { @class = "mform" } })
+                        @Html.ValidationMessageFor(model => model.NumberOfLessons, "", new { @class = "text-danger" })
+                    
+                </section>
+            </fieldset>
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AppUserID, "AppUserID", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("AppUserID", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.AppUserID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+                <section class="mform">
+                    
+                        <table>
+                            <tr>
+                                @{ int cnt = 0;
+                                    List<MySensei.ViewModels.AssignedTagData> tags = ViewBag.Tags;
+                                    foreach (var tag in tags)
+                                    {
+                                        if (cnt++ % 3 == 0)
+                                        {
+                                            @:</tr> <tr>
                                  }
-                                    @:<td style="padding:0 12px 0 0">
-                                        <input type="checkbox"
-                                               name="selectedTags"
-                                               value="@tag.TagID"
-                                               @(Html.Raw(tag.Assigned ? "checked=\"checked\"" : "")) />
-                                        @tag.TagName
-                                        @:</td>
+                                        @:<td style="padding:0 12px 0 0">
+                                            <input type="checkbox"
+                                                   name="selectedTags"
+                                                   value="@tag.TagID"
+                                                   @(Html.Raw(tag.Assigned ? "checked=\"checked\"" : "")) />
+                                                @tag.TagName
+                                                @: </td>
                                     }
-                                    @:</tr>
-                        }
-                    </table>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
-            </div>
+                                    @: </tr>
+                                }
+                            </table>
+                        </section>
+                   
+                    <section class="mform">
+                        <button type="submit" class="button">Gem </button>
+                    </section>
+                                    }
+        
+        <div>
+            @Html.ActionLink("Tilbage", "Index")
         </div>
-}
+    </section>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
+        </section>

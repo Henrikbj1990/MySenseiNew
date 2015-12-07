@@ -21,6 +21,7 @@
                     <img class="logo" src="@Url.Content("~/Content/img/logo.png")" />
                 </a>
                 <nav>
+                    <i class="icon-append icon-list"></i>@Html.ActionLink("Oversigt ", "Index", "Courses")
                     @if (User.Identity.IsAuthenticated)
                     {
                         <i class="icon-append icon-user"></i>@Html.ActionLink("Min profil ", "Index", "Profile")
