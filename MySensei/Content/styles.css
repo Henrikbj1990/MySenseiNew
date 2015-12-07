@@ -888,10 +888,28 @@ header {
   margin-top: 15px;
   float: left; }
 
+.grid-3 {
+  width: 31%;
+  min-height: 30px;
+  float: left;
+  margin: 1%;
+  text-align: center;
+  background: #3B3B3B; }
+  .grid-3 h3 {
+    color: #47b7b7;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px; }
+  .grid-3 p {
+    color: #FFF; }
+
 .grid-4 {
   width: 23%;
+  min-height: 200px;
   float: left;
-  padding: 10px;
+  text-align: center;
   margin: 1%;
   background: #3B3B3B; }
   .grid-4 h3 {
@@ -1049,5 +1067,8 @@ header {
   .split {
     width: 100%; }
   .sidebar {
-    position: absolute; } }
+    position: absolute; }
+  .grid-4 {
+    width: 90%;
+    margin: 0 auto; } }
 
