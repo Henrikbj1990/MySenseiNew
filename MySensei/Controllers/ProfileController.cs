@@ -130,7 +130,6 @@ namespace MySensei.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "Username", course.AppUserID);
             return View(course);
         }
 
