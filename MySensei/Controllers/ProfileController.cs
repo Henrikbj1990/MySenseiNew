@@ -22,7 +22,7 @@ namespace MySensei.Controllers
 
         // GET: Profile
         
-        public ActionResult Index()
+        public ActionResult Index(int? userId)
         {
             //var currentUserId = User.Identity.GetUserId();
             var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));

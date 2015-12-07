@@ -6,6 +6,15 @@
 
 <h2>Index</h2>
 
+@using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post, new { @class = "sform" }))
+{
+    <fieldset class="">
+        <label class="input">
+            @Html.TextBox("SearchString", null, new { @placeholder = ".. Spille guitar" })
+        </label>
+        <button type="submit" class="button s-btn">Find Sensei</button>
+    </fieldset>
+}
 
 @foreach (var course in Model)
 {

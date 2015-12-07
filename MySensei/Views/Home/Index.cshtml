@@ -25,10 +25,11 @@
                     <div class="split">
                         <div class="hr"></div>
                         <p class="s-height">Jeg vil gerne blive en Sensei der kan lære andre at . .</p>
+                        
                         @using (Html.BeginForm("AddCourse", "Profile", FormMethod.Post, new {@class = "sform"}))
                         {
+                            @Html.AntiForgeryToken()
                             <fieldset>
-
                                 <label class="input">
                                     @Html.TextBox("SearchString", null, new { @placeholder = ".. Tegne" })
                                 </label>

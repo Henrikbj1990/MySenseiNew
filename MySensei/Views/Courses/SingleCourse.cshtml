@@ -5,8 +5,22 @@
 
 <h2>SingleCourse</h2>
 
-@Model.Title <br/>
+@Model.Title <br />
 
 @Model.Description
 
-@Html.ActionLink("Timeld Kursus" ,"JoinCourse", new {courseId = Model.CourseID})
+@if (ViewBag.noLogin == true)
+{
+    <p>Login eller opret bruger for at tilmelde kursus</p>
+}
+else if (ViewBag.isTeacher != true)
+{
+    if (ViewBag.userIsOnCourse == true)
+    {
+        @Html.ActionLink("Afmeld Kursus", "LeaveCourse", new { courseId = Model.CourseID })
+    }
+    else
+    {
+        @Html.ActionLink("Timeld Kursus", "JoinCourse", new { courseId = Model.CourseID })
+    }
+}

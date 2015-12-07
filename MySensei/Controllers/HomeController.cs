@@ -16,7 +16,7 @@ namespace MySensei.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View(_repository.GetCourses());
+            return View(_repository.GetCourses().Reverse().Take(4).ToList());
         }
     }
 }
