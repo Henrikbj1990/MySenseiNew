@@ -888,10 +888,34 @@ header {
   margin-top: 15px;
   float: left; }
 
+.grid-3 {
+  width: 29%;
+  min-height: 80px;
+  float: left;
+  margin: 1%;
+  padding: 1%;
+  text-align: center;
+  background: #3B3B3B; }
+  .grid-3 h3 {
+    color: #47b7b7;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px; }
+  .grid-3 p {
+    color: #FFF; }
+  .grid-3 a {
+    color: #ffcb63;
+    font-size: 12px; }
+  .grid-3 a:hover {
+    color: #47b7b7; }
+
 .grid-4 {
   width: 23%;
+  min-height: 200px;
   float: left;
-  padding: 10px;
+  text-align: center;
   margin: 1%;
   background: #3B3B3B; }
   .grid-4 h3 {
@@ -986,7 +1010,11 @@ header {
     width: 50%;
     padding: 0 15px 0 15px; }
   .s-height {
-    min-height: 20px; } }
+    min-height: 20px; }
+  .profile-content {
+    width: 80%; }
+  .profile-courses {
+    width: 100%; } }
 
 @media all and (max-width: 768px) {
   .fbg {
@@ -999,9 +1027,18 @@ header {
     width: 80%; }
   .grid-4 {
     width: 46%;
-    padding: 0 1%; } }
+    padding: 0 1%; }
+  .profile-content {
+    width: 50%; } }
 
 @media all and (max-width: 480px) {
+  .profile-picture {
+    width: 100%;
+    margin: 0 auto; }
+    .profile-picture img {
+      margin: 0 auto; }
+  .profile-content {
+    width: 100%; }
   .fbg {
     background: none !important; }
   section {
@@ -1038,5 +1075,10 @@ header {
   .split {
     width: 100%; }
   .sidebar {
-    position: absolute; } }
+    position: absolute; }
+  .grid-4 {
+    width: 90%;
+    margin: 0 auto; }
+  .grid-3 {
+    width: 48%; } }
 

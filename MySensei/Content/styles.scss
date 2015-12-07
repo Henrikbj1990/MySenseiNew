@@ -247,10 +247,40 @@ font-size:20px;
     float:left;
 }
 
+.grid-3{
+    width:29%;
+    min-height:80px;
+    float:left;
+    margin: 1%;
+    padding:1%;
+    text-align:center;
+    background: $dark;
+
+    h3{
+        color:$blue;
+        font-family: 'Roboto Slab', sans-serif;
+        font-size:15px;
+        text-transform:uppercase;
+        text-align:center;
+        padding-bottom:10px;
+    }
+    p{
+        color:#FFF;
+    }
+    a{
+        color:$yellow;
+        font-size:12px;
+    }
+    a:hover{
+        color:$blue;
+    }
+}
+
 .grid-4{
     width:23%;
+    min-height:200px;
     float:left;
-    padding:10px;
+    text-align:center;
     margin:1%;
     background: $dark;
 
@@ -368,6 +398,7 @@ font-size:20px;
 
 @media all and (max-width: 1024px) {
     section {
+    
         
         h1 {font-size:40px;}
         } 
@@ -386,6 +417,14 @@ font-size:20px;
 }
     .s-height{
     min-height:20px;
+}
+    .profile-content{
+        width:80%;
+    }
+    .profile-courses{
+    width: 100%;
+
+   
 }
   
 }
@@ -409,11 +448,27 @@ font-size:20px;
     width:46%;
     padding:0 1%;
     }
+.profile-content{width:50%;}
+
 
 }
 
 @media all and (max-width: 480px) {
-    .fbg{
+   .profile-picture{
+       width:100%;
+       margin: 0 auto;
+
+       img{
+           margin: 0 auto;
+       }
+       }
+   
+       .profile-content{width:100%;
+                        
+       }
+   
+    
+     .fbg{
     background:none!important;
     
 }
@@ -468,6 +523,13 @@ font-size:20px;
 
 .split { width:100%;}
 .sidebar {position: absolute;}
+.grid-4{
+    width:90%;
+    margin:0 auto;
+    }
+.grid-3{
+    width:48%;
+}
 }
 
 
