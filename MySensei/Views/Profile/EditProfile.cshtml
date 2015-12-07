@@ -1,37 +1,46 @@
 ﻿@model MySensei.Models.AppUser
 @{ ViewBag.Title = "Edit"; }
 @Html.ValidationSummary(false)
-<h2>Edit User</h2>
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(x => x.Id)
+<section style="margin-top:-40px;">
+    <section class="edit">
+        <h1>Rediger oplysninger</h1>
+        @using (Html.BeginForm("EditProfile", "Profile", FormMethod.Post, new { @class = "mform" }))
+        {
+            @Html.HiddenFor(x => x.Id)
 
-    <div class="form-group">
-        <label>First name</label>
-        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        <label>Last name</label>
-        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
-    </div>
+            <fieldset>
+                <section class="mform">
+                    <label class="input">Fornavn</label>
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "mform" })
+                </section>
 
-    <div class="form-group">
-        <label>Beskrivelse</label>
-        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
-    </div>
+                <section class="mform">
+                    <label class="input">Efternavn</label>
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "mform" })
+                </section>
 
-    <div class="form-group">
-        <label>User name</label>
-        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input name="password" type="password" class="form-control" />
-    </div>
-    <button type="submit" class="">Save</button>
-    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
-}
+                <section class="mform">
+                    <label class="input">Beskrivelse</label>
+                    @Html.TextAreaFor(x => x.Description, new { @class = "mform" })
+                </section>
+                <section class="mform">
+                    <label class="input">Brugernavn</label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "mform" })
+                </section>
+
+                <section class="mform">
+                <label class="input">Email</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "mform" })
+                </section>
+
+                <section class="mform">
+                    <label class="input">Password</label>
+                    <input name="password" type="password" class="mform" />
+                </section>
+            </fieldset>
+                    <button type="submit" class="button">Gem</button>
+                    @Html.ActionLink("Fortryd", "Index", null, new { @class = "button" })
+        }
+        <div class="clearfix"></div>
+    </section>
+    </section>

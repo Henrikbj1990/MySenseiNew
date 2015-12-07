@@ -21,8 +21,8 @@
         <h3>Beskrivelse</h3>
         <p>@Model.Description</p>
 
-        @Html.ActionLink("Ret Profil", "Edit")
-        @Html.ActionLink("Opret Kursus", "AddCourse", "Profile")
+        @Html.ActionLink("Ret Profil", "EditProfile")
+        
     </div>
 
     <div class="profile-courses">
@@ -39,7 +39,7 @@
                 </div>
                 }
         </div>
-
+        <div class="clearfix"></div>
         <div class="row">
         
             <h2>Instruerer kursus</h2>
@@ -47,10 +47,12 @@
             {
                 <div class="grid-3">
                     <h3>@course.Title</h3>
-                   <a href="#">Ændre</a>
+                   @Html.ActionLink("Ændre","EditCourse","Profile" , new {courseId = course.CourseID }, null)
                             </div>
                                     }
                             </div>
+        <div class="clearfix"></div>
+        @Html.ActionLink("Opret Kursus", "AddCourse", "Profile", null, new {@class="olink" })
 
     </div>
 </section>

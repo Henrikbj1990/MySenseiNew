@@ -342,12 +342,12 @@
     <Content Include="Views\SignUp\Index.cshtml" />
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\SearchCourses.cshtml" />
-    <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Shared\_Signup.cshtml" />
     <Content Include="Views\Profile\AddCourse.cshtml" />
     <Content Include="Views\Courses\SingleCourse.cshtml" />
     <Content Include="Views\Profile\EditCourse.cshtml" />
+    <Content Include="Views\Profile\EditProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

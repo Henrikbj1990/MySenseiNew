@@ -999,6 +999,21 @@ header {
     text-transform: uppercase;
     padding: 15px 0; }
 
+.olink {
+  color: #ffcb63; }
+
+.edit {
+  width: 700px;
+  background: #3B3B3B;
+  margin: 0 auto;
+  padding: 30px; }
+  .edit input, .edit textarea {
+    width: 100%;
+    border: 2px solid #ffcb63;
+    color: #3B3B3B; }
+  .edit textarea {
+    min-height: 200px; }
+
 @media all and (max-width: 1024px) {
   section h1 {
     font-size: 40px; }
@@ -1014,9 +1029,14 @@ header {
   .profile-content {
     width: 80%; }
   .profile-courses {
-    width: 100%; } }
+    width: 90%; }
+  .profile-picture {
+    width: 15%; } }
 
 @media all and (max-width: 768px) {
+  .edit {
+    width: 500px;
+    padding: 10px; }
   .fbg {
     background: url("img/bg_768.png"); }
   .split {
@@ -1029,12 +1049,16 @@ header {
     width: 46%;
     padding: 0 1%; }
   .profile-content {
-    width: 50%; } }
+    width: 90%;
+    clear: left; } }
 
 @media all and (max-width: 480px) {
+  .edit {
+    width: 98%;
+    padding: 1%; }
   .profile-picture {
     width: 100%;
-    margin: 0 auto; }
+    margin: 0; }
     .profile-picture img {
       margin: 0 auto; }
   .profile-content {
@@ -1080,5 +1104,5 @@ header {
     width: 90%;
     margin: 0 auto; }
   .grid-3 {
-    width: 48%; } }
+    width: 90%; } }
 
