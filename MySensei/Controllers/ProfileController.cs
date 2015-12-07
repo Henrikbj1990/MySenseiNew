@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -133,6 +134,43 @@ namespace MySensei.Controllers
             return View(course);
         }
 
+        public ActionResult EditCourse(int? id)
+        {
+            if (id == null) { return new HttpStatusCodeResult(HttpStatusCode.BadRequest); }
+            //Course course = db.Courses.Find(id);
+            Course course = db.Courses
+            .Include(c => c.Tags)
+            .Where(c => c.CourseID == id)
+            .Single();
+            PopulateTagsData(course);
+
+            if (course == null) { return HttpNotFound(); }
+
+            return View(course);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditCourse(int? courseID, string[] selectedTags)
+        {
+            var courseToUpdate = db.Courses.Include(c => c.CourseTeacher).Include(c => c.Tags).Where(c => c.CourseID == courseID).Single();
+            if (TryUpdateModel(courseToUpdate, "", new string[] { "Title", "Description", "StartDate", "EndDate", "NumberOfLessons", "CourseTeacherId" }))
+            {
+                try
+                {
+                    UpdateCourseTags(selectedTags, courseToUpdate);
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
+            }
+
+            // Tags check boxes
+            PopulateTagsData(courseToUpdate);
+            return View(courseToUpdate);
+        }
 
         private void AddErrorsFromResult(IdentityResult result)
         {
@@ -142,6 +180,7 @@ namespace MySensei.Controllers
             }
         }
 
+
         private AppUserManager UserManager
         {
             get
@@ -149,6 +188,8 @@ namespace MySensei.Controllers
                 return HttpContext.GetOwinContext().GetUserManager<AppUserManager>();
             }
         }
+
+
         private void PopulateTagsData(Course course)
         {
             var allTags = db.Tags;
@@ -164,6 +205,35 @@ namespace MySensei.Controllers
                 });
             }
             ViewBag.Tags = viewModel;
+        }
+
+
+        public void UpdateCourseTags(string[] selectedTags, Course courseToUpdate)
+        {
+            if (selectedTags == null)
+            {
+                courseToUpdate.Tags = new List<Tag>();
+                return;
+            }
+            var selectedTagsHS = new HashSet<string>(selectedTags);
+            var courseTags = new HashSet<int>(courseToUpdate.Tags.Select(t => t.TagID));
+            foreach (var tag in db.Tags)
+            {
+                if (selectedTagsHS.Contains(tag.TagID.ToString()))
+                {
+                    if (!courseTags.Contains(tag.TagID))
+                    {
+                        courseToUpdate.Tags.Add(tag);
+                    }
+                }
+                else
+                {
+                    if (courseTags.Contains(tag.TagID))
+                    {
+                        courseToUpdate.Tags.Remove(tag);
+                    }
+                }
+            }
         }
     }
 }
