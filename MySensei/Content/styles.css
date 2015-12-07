@@ -889,10 +889,11 @@ header {
   float: left; }
 
 .grid-3 {
-  width: 31%;
-  min-height: 30px;
+  width: 29%;
+  min-height: 80px;
   float: left;
   margin: 1%;
+  padding: 1%;
   text-align: center;
   background: #3B3B3B; }
   .grid-3 h3 {
@@ -904,6 +905,11 @@ header {
     padding-bottom: 10px; }
   .grid-3 p {
     color: #FFF; }
+  .grid-3 a {
+    color: #ffcb63;
+    font-size: 12px; }
+  .grid-3 a:hover {
+    color: #47b7b7; }
 
 .grid-4 {
   width: 23%;
@@ -1004,7 +1010,11 @@ header {
     width: 50%;
     padding: 0 15px 0 15px; }
   .s-height {
-    min-height: 20px; } }
+    min-height: 20px; }
+  .profile-content {
+    width: 80%; }
+  .profile-courses {
+    width: 100%; } }
 
 @media all and (max-width: 768px) {
   .fbg {
@@ -1019,9 +1029,7 @@ header {
     width: 46%;
     padding: 0 1%; }
   .profile-content {
-    width: 50%; }
-  .profile-courses {
-    width: 100%; } }
+    width: 50%; } }
 
 @media all and (max-width: 480px) {
   .profile-picture {
@@ -1070,5 +1078,7 @@ header {
     position: absolute; }
   .grid-4 {
     width: 90%;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .grid-3 {
+    width: 48%; } }
 

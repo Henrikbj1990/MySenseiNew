@@ -40,14 +40,14 @@
             }
             </div>
         
+        <div class="row">
         
-        <div>
             <h2>Instruerer kursus</h2>
             @foreach (var course in Model.TeacherCourses)
             {
                 <div class="grid-3">
                     <h3>@course.Title</h3>
-                   
+                   <a href="#">Ændre</a>
                 </div>
             }
         </div>
