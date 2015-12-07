@@ -21,7 +21,7 @@ namespace MySensei.Controllers
         private AppIdentityDbContext db = new AppIdentityDbContext();
 
         // GET: Profile
-        
+
         public ActionResult Index(int? userId)
         {
             //var currentUserId = User.Identity.GetUserId();
@@ -99,13 +99,41 @@ namespace MySensei.Controllers
         }
 
 
-        public ActionResult AddCourse()
+        public ActionResult AddCourse(string courseTitle)
         {
+            ViewBag.courseTitle = courseTitle;
             var course = new Course();
             course.Tags = new List<Tag>();
             PopulateTagsData(course);
             return View(course);
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult AddCourseTitle([Bind(Include = "CourseID,Title,Description,StartDate,EndDate,NumberOfLessons,CourseTeacherId")] Course course, string[] selectedTags)
+        //{
+        //    if (selectedTags != null)
+        //    {
+        //        course.Tags = new List<Tag>();
+        //        foreach (var tag in selectedTags)
+        //        {
+        //            var tagToAdd = db.Tags.Find(int.Parse(tag));
+        //            course.Tags.Add(tagToAdd);
+        //        }
+        //    }
+
+        //    var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
+        //    var currentUser = manager.FindById(User.Identity.GetUserId());
+        //    course.CourseTeacherId = currentUser.Id;
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Courses.Add(course);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(course);
+        //}
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

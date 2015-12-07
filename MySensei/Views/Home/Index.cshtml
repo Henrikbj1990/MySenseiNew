@@ -26,12 +26,12 @@
                         <div class="hr"></div>
                         <p class="s-height">Jeg vil gerne blive en Sensei der kan lære andre at . .</p>
                         
-                        @using (Html.BeginForm("AddCourse", "Profile", FormMethod.Post, new {@class = "sform"}))
+                        @using (Html.BeginForm("AddCourse", "Profile", FormMethod.Get, new {@class = "sform"}))
                         {
-                            @Html.AntiForgeryToken()
+                            @*@Html.AntiForgeryToken()*@
                             <fieldset>
                                 <label class="input">
-                                    @Html.TextBox("SearchString", null, new { @placeholder = ".. Tegne" })
+                                    @Html.TextBox("courseTitle", null, new { @placeholder = ".. Tegne" })
                                 </label>
                                 <button type="submit" class="button s-btn">Bliv Sensei</button>
                             </fieldset>
