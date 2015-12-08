@@ -422,6 +422,26 @@ font-size:20px;
     textarea{min-height:200px;}
    
 }
+.delete{
+    h3{
+        font-family:'Roboto Slab', serif;
+        font-size:20px;
+        color:$yellow;
+        margin-bottom:15px;
+    }
+    p{color:$yellow;}
+    footer{
+        float:right;
+        
+
+        button{
+            background:$yellow;
+            border:none;
+            color:#FFF;
+            padding:15px;
+        }
+    }
+}
 
 @media all and (max-width: 1024px) {
     section {

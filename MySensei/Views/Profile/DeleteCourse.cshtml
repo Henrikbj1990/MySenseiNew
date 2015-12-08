@@ -4,71 +4,44 @@
     ViewBag.Title = "Slet kursus";
 }
 
-<h2>Slet kursus</h2>
+<div class="edit delete">
 
 <h3>Er du sikker på du vil fjerne dette kursus?</h3>
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseTeacher.FirstName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CourseTeacher.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
+   
+      
+           <p> @Html.DisplayFor(model => model.Title)</p>
+    
+        
+        <p>
             @Html.DisplayFor(model => model.Description)
-        </dd>
+        </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
+        
 
-        <dd>
+        <p>
             @Html.DisplayFor(model => model.StartDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-
-        <dd>
+        
+       
             @Html.DisplayFor(model => model.EndDate)
-        </dd>
+        </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NumberOfLessons)
-        </dt>
+        <p>
+            @Html.DisplayFor(model => model.NumberOfLessons) lektioner
+        </p>
 
-        <dd>
-            @Html.DisplayFor(model => model.NumberOfLessons)
-        </dd>
+    <footer>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Tilbage til Profil", "Index")
-        </div>
-    }
+            <button type="submit" class="button"> Slet </button>
+
+
+
+        }
+    </footer>
+    <div class="clearfix"></div>
 </div>
 
