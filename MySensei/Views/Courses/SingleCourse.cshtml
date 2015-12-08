@@ -1,26 +1,30 @@
 ﻿@model MySensei.Models.Course
 @{
-    ViewBag.Title = "SingleCourse";
+    ViewBag.Title = "Kursus";
 }
 
-<h2>SingleCourse</h2>
-
-@Model.Title <br />
-
-@Model.Description
-
-@if (ViewBag.noLogin == true)
-{
-    <p>Login eller opret bruger for at tilmelde kursus</p>
-}
-else if (ViewBag.isTeacher != true)
-{
-    if (ViewBag.userIsOnCourse == true)
-    {
-        @Html.ActionLink("Afmeld Kursus", "LeaveCourse", new { courseId = Model.CourseID })
-    }
-    else
-    {
-        @Html.ActionLink("Timeld Kursus", "JoinCourse", new { courseId = Model.CourseID })
-    }
-}
+<section class="bluebg">
+    
+    <div class="center">
+        <h1>@Model.Title</h1>
+        <p>@Model.StartDate - @Model.EndDate</p>
+        <h3>Beskrivelse</h3><br />
+       <p> @Model.Description</p>
+        @if (ViewBag.noLogin == true)
+        {
+            <p>Login eller opret bruger for at tilmelde kursus</p>
+        }
+        else if (ViewBag.isTeacher != true)
+        {
+            if (ViewBag.userIsOnCourse == true)
+            {
+                @Html.ActionLink("Afmeld Kursus", "LeaveCourse", new { courseId = Model.CourseID }, new { @class="y-btn" })
+            }
+            else
+            {
+                @Html.ActionLink("Timeld Kursus", "JoinCourse", new { courseId = Model.CourseID }, new { @class="t-btn" })
+            }
+        }
+    </div>
+        <div class="clearfix"></div>
+</section>

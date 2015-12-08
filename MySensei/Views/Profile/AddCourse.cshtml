@@ -3,87 +3,83 @@
 @{
     ViewBag.Title = "Opret Kursus";
 }
-<section style="margin-top:-40px;">
+<section style="margin-top:-20px;">
     <section class="edit">
         <h1>Opret kursus</h1>
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("AddCourse", "Profile", FormMethod.Post, new { @class = "mform" }))
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
-                <h4>Course</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <fieldset>
+                <section class="mform">
+                    <label class="input">Titel</label>
+                    
                         @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.courseTitle } })
                         @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.NumberOfLessons, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.NumberOfLessons, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.NumberOfLessons, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                   </section>
+                    <section class="mform">
+                        <label class="input">Beskrivelse</label>
+                        @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "mform" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        
+                    </section>
+                    <section class="mform">
+                        <label class="input">Star Dato</label>
+                        
+                            @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                       
+                    </section>
+                    <section class="mform">
+                        <label class="input">Slut Dato</label>
+                        
+                            @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                        
+                    </section>
+                    <section class="mform">
+                        <label class="input">Antal lektioner</label>
+                        
+                            @Html.EditorFor(model => model.NumberOfLessons, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NumberOfLessons, "", new { @class = "text-danger" })
+                     
+                    </section>
 
-                <div class="col-md-offset-2 col-md-10">
-                    <table>
-                        <tr>
-                            @{
-                                int cnt = 0;
-                                List<AssignedTagData> tags = ViewBag.Tags;
-                                foreach (var tag in tags)
-                                {
-                                    if (cnt++ % 3 == 0)
+                    <section class="mform">
+                        <table>
+                            <tr>
+                                @{
+                                    int cnt = 0;
+                                    List<AssignedTagData> tags = ViewBag.Tags;
+                                    foreach (var tag in tags)
                                     {
-                                        @:</tr> <tr>
+                                        if (cnt++ % 3 == 0)
+                                        {
+                                            @:</tr><tr>
         }
-                                    @:<td style="padding: 0 0 0 10px">
-                                        <input type="checkbox"
-                                               name="selectedTags"
-                                               value="@tag.TagID"
-                                               @(Html.Raw(tag.Assigned ? "checked=\"checked\"" : "")) />
-                                        @tag.TagName
-                                        @:</td>
+                                        @:<td style="padding: 0 0 0 10px">
+                                            <input type="checkbox"
+                                                   name="selectedTags"
+                                                   value="@tag.TagID"
+                                                   @(Html.Raw(tag.Assigned ? "checked=\"checked\"" : "")) />
+                                            @tag.TagName
+                                            @:</td>
             }
-                                @:</tr>
-                            }
-                        </table>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Create" class="btn btn-default" />
-                        </div>
-                    </div>
-                </div>
+                                    @:</tr>
                                 }
+                            </table>
+                        </section>
+                        </fieldset>
+                        <section class="mform">
+                            <button type="submit" class="button">Opret</button>
+                        </section>
+
+                                    }
         <div>
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Fortryd", "Index")
         </div>
-        </section>
-                                </section>
+    </section>
+</section>
+<div class="clearfix"></div>

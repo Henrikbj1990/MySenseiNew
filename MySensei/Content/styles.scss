@@ -30,7 +30,11 @@ a {
   }
 a:hover {color: $yellow; }
 
-
+a.y-btn{
+    background:$yellow!important;
+    padding:10px;
+    margin-bottom:15px;
+}
 #wrapper {
   width: 100%;
   margin: 0 auto; }
@@ -73,7 +77,10 @@ section {
     color: $dark; }
 
     }
-
+.search {
+    width:300px;
+    margin:0 auto;
+}
 .bluebg {
     margin-top:30px;
     background-color: $blue;
@@ -266,6 +273,7 @@ font-size:20px;
     }
     p{
         color:#FFF;
+        font-size:12px;
     }
     a{
         color:$yellow;

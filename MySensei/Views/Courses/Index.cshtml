@@ -1,22 +1,31 @@
 ﻿@model List<MySensei.Models.Course>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Oversigt";
 }
 
-<h2>Index</h2>
+<section class="search">
 
-@using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post, new { @class = "sform" }))
-{
-    <fieldset class="">
-        <label class="input">
-            @Html.TextBox("SearchString", null, new { @placeholder = ".. Spille guitar" })
-        </label>
-        <button type="submit" class="button s-btn">Find Sensei</button>
-    </fieldset>
-}
-
+    @using (Html.BeginForm("SearchCourses", "Courses", FormMethod.Post, new { @class = "sform" }))
+    {
+        <fieldset class="">
+            <label class="input">
+                @Html.TextBox("SearchString", null, new { @placeholder = "Søg.." })
+            </label>
+            <button type="submit" class="button s-btn">Find Sensei</button>
+        </fieldset>
+    }
+</section>
+<div class="clearfix"></div>
+<section class="bluebg">
+    <h1 class="center">Alle Kurser</h1>
 @foreach (var course in Model)
 {
-    @course.Title
+    <div class="grid-4">
+        <h3>@course.Title</h3>
+        <p>@course.Description</p>
+        @Html.ActionLink("Se kursus", "SingleCourse", new { courseId = course.CourseID })
+    </div>
 }
+    <div class="clearfix"></div>
+</section>
