@@ -49,6 +49,7 @@
                 <div class="grid-3">
                     <h3>@course.Title</h3>
                    @Html.ActionLink("Rediger","EditCourse","Profile" , new {courseId = course.CourseID }, null)
+                    @Html.ActionLink("Slet", "DeleteCourse", "Profile", new { courseId = course.CourseID }, null)
                             </div>
                                     }
                             </div>

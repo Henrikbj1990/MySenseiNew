@@ -7,7 +7,7 @@
     
     <div class="center">
         <h1>@Model.Title</h1>
-        <p>@Model.StartDate - @Model.EndDate</p>
+        <p>@Model.StartDate.ToString("dd-MM-yyyy") - @Model.EndDate.ToString("dd-MM-yyyy")</p>
         <h3>Beskrivelse</h3><br />
        <p> @Model.Description</p>
         @if (ViewBag.noLogin == true)
