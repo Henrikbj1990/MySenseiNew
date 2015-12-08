@@ -34,24 +34,43 @@ a.y-btn{
     background:$yellow!important;
     padding:10px;
     margin-bottom:15px;
+    color:$blue!important;
+    &:hover{
+        color:white;
+    }
 }
+
 #wrapper {
   width: 100%;
   margin: 0 auto; }
 
 #main {
   background-color: #fff;
-  padding-top: 100px; }
+  padding-top: 35px; }
 
 .container {
   width: 90%;
   margin: 0 auto;
-  padding: 0 5% ; }
+  padding: 0 5% ; 
+
+}
+
 .main-content{
     section{
     padding: 30px 0;
     }
 }
+
+#author {
+    font-size:smaller;
+}
+
+
+
+.coursePic {
+    border-radius: 50%;
+}
+
 section {
    
 
@@ -65,7 +84,23 @@ section {
           color:$yellow; 
           }
 
+        h2{
         
+        color:$blue;
+        font-family:'Roboto Slab', serif;
+        font-size:18px;
+        text-transform:uppercase;
+        padding:15px 0;
+    }
+        h3{
+        
+        color:$yellow;
+        font-family:'Roboto Slab', serif;
+        font-size:18px;
+        text-transform:uppercase;
+        padding:15px 0;
+    }
+
         p {
             margin-bottom: 30px; 
            }
@@ -84,7 +119,14 @@ section {
 .bluebg {
     margin-top:30px;
     background-color: $blue;
-    color: white; }
+    color: white; 
+        a{
+            color:$yellow;
+            &:hover{
+                color:white;
+            }
+        }
+}
 
 .dark {
     background-color: $dark;
@@ -292,6 +334,11 @@ font-size:20px;
     margin:1%;
     background: $dark;
 
+    .coursePic {
+    width:75%;
+    border-radius: 50%;
+    }
+
     h3{
         color:$blue;
         font-family: 'Roboto Slab', sans-serif;
@@ -321,6 +368,7 @@ font-size:20px;
 .center {
 	margin: 0 auto;
 	padding-top: 15px;
+    padding-bottom: 1%;
 	text-align:center;
 		
 }
@@ -480,7 +528,9 @@ font-size:20px;
 }
 
 @media all and (max-width: 768px) {
-    .edit{
+    #main{
+    padding-top: 65px;}
+     .edit{
     width:500px;
     padding:10px;
     }
@@ -509,6 +559,18 @@ font-size:20px;
 
 
 @media all and (max-width: 480px) {
+    #main{
+        padding-top:15px;
+
+    }
+
+.small{
+
+    nav{
+        margin-top: -10px
+    }
+}
+
   .edit{
     width:98%;
     padding:1%;
@@ -552,7 +614,8 @@ font-size:20px;
         float: none;
         height: 20px;
         text-align: center;
-        margin: 0 auto; }
+        margin: 0 auto;
+        }
 
         nav a {
         line-height: 35px;
@@ -578,14 +641,23 @@ font-size:20px;
        width: 90%;
        }
    }
+
+  .coursePic {
+    width:50%;
+    }
         
 
 .split { width:100%;}
 .sidebar {position: absolute;}
 .grid-4{
     width:90%;
-    margin:0 auto;
+    margin: 2% 4%;
+        p{
+            line-height: 0.8;
+            margin-bottom:15px;
+        }
     }
+
 .grid-3{
     width:90%;
 }

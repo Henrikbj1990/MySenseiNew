@@ -4,12 +4,18 @@
 }
 
 <section class="bluebg">
-    
+
     <div class="center">
         <h1>@Model.Title</h1>
+        <p id="author">
+            Sensei: 
+            @Html.ActionLink(@Model.CourseTeacher.UserName, "PublicProfile", "Profile", new { profileId = @Model.CourseTeacher.Id }, null)
+        </p>
+        <h3>Tidspunkt:</h3>
         <p>@Model.StartDate.ToString("dd-MM-yyyy") - @Model.EndDate.ToString("dd-MM-yyyy")</p>
-        <h3>Beskrivelse</h3><br />
-       <p> @Model.Description</p>
+        <img class="coursePic" src="http://placehold.it/250/ffcb63/47b7b7?text=Coming+Soon">
+        <h3>Beskrivelse:</h3>
+        <p> @Model.Description</p>
         @if (ViewBag.noLogin == true)
         {
             <p>Login eller opret bruger for at tilmelde kursus</p>
@@ -18,13 +24,13 @@
         {
             if (ViewBag.userIsOnCourse == true)
             {
-                @Html.ActionLink("Afmeld Kursus", "LeaveCourse", new { courseId = Model.CourseID }, new { @class="y-btn" })
+                @Html.ActionLink("Afmeld Kursus", "LeaveCourse", new { courseId = Model.CourseID }, new { @class = "y-btn" })
             }
             else
             {
-                @Html.ActionLink("Timeld Kursus", "JoinCourse", new { courseId = Model.CourseID }, new { @class="y-btn" })
+                @Html.ActionLink("Timeld Kursus", "JoinCourse", new { courseId = Model.CourseID }, new { @class = "y-btn" })
             }
         }
     </div>
-        <div class="clearfix"></div>
+    <div class="clearfix"></div>
 </section>
