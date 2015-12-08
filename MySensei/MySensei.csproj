@@ -265,7 +265,7 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Controllers\CoursesController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleAdminController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
@@ -324,10 +324,10 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Areas\Admin\Views\RoleAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\RoleAdmin\Create.cshtml" />
