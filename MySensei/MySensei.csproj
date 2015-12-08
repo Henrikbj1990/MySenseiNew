@@ -304,6 +304,14 @@
     <Compile Include="Migrations\201512051037564_CourseRoles.Designer.cs">
       <DependentUpon>201512051037564_CourseRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512081725168_fix3.cs" />
+    <Compile Include="Migrations\201512081725168_fix3.Designer.cs">
+      <DependentUpon>201512081725168_fix3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512081733151_fix31.cs" />
+    <Compile Include="Migrations\201512081733151_fix31.Designer.cs">
+      <DependentUpon>201512081733151_fix31.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -349,7 +357,6 @@
     <Content Include="Views\Profile\EditCourse.cshtml" />
     <Content Include="Views\Profile\EditProfile.cshtml" />
     <Content Include="Views\Profile\PublicProfile.cshtml" />
-    <Content Include="Views\Profile\DeleteProfile.cshtml" />
     <Content Include="Views\Profile\DeleteCourse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -373,6 +380,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512051037564_CourseRoles.resx">
       <DependentUpon>201512051037564_CourseRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512081725168_fix3.resx">
+      <DependentUpon>201512081725168_fix3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512081733151_fix31.resx">
+      <DependentUpon>201512081733151_fix31.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

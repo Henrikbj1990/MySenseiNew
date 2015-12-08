@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MySensei.Models;
 using Microsoft.AspNet.Identity;
@@ -27,7 +28,7 @@ namespace MySensei.Infrastructure
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); // Identity use pluralized table names
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); // Identity use pluralized table names
             // one-to-many relation between Course (1) and User (N)
             modelBuilder.Entity<Course>()
                 .HasRequired<AppUser>(t => t.CourseTeacher)
@@ -38,6 +39,7 @@ namespace MySensei.Infrastructure
             modelBuilder.Entity<Course>()
                 .HasMany(s => s.CourseStudents)
                 .WithMany(t => t.StudentCourses)
+                .MapToStoredProcedures()
                 .Map(m =>
                 {
                     m.ToTable("StudentCourses");
