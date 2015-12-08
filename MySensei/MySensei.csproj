@@ -349,6 +349,8 @@
     <Content Include="Views\Profile\EditCourse.cshtml" />
     <Content Include="Views\Profile\EditProfile.cshtml" />
     <Content Include="Views\Profile\PublicProfile.cshtml" />
+    <Content Include="Views\Profile\DeleteProfile.cshtml" />
+    <Content Include="Views\Profile\DeleteCourse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -124,32 +124,6 @@ namespace MySensei.Controllers
             return View(course);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult AddCourseTitle([Bind(Include = "CourseID,Title,Description,StartDate,EndDate,NumberOfLessons,CourseTeacherId")] Course course, string[] selectedTags)
-        //{
-        //    if (selectedTags != null)
-        //    {
-        //        course.Tags = new List<Tag>();
-        //        foreach (var tag in selectedTags)
-        //        {
-        //            var tagToAdd = db.Tags.Find(int.Parse(tag));
-        //            course.Tags.Add(tagToAdd);
-        //        }
-        //    }
-
-        //    var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
-        //    var currentUser = manager.FindById(User.Identity.GetUserId());
-        //    course.CourseTeacherId = currentUser.Id;
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Courses.Add(course);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(course);
-        //}
-
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -213,6 +187,35 @@ namespace MySensei.Controllers
             // Tags check boxes
             PopulateTagsData(courseToUpdate);
             return View(courseToUpdate);
+        }
+
+        // GET: Courses/Delete/5
+        public ActionResult DeleteCourse(int? courseId)
+        {
+            if (courseId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Course course = db.Courses.Find(courseId);
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
+            return View(course);
+        }
+
+        // POST: Courses/Delete/5
+        [HttpPost, ActionName("DeleteCourse")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int courseId)
+        {
+            Course course = db.Courses
+            .Include(c => c.Tags)
+            .Where(c => c.CourseID == courseId)
+            .Single();
+            db.Courses.Remove(course);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         private void AddErrorsFromResult(IdentityResult result)
