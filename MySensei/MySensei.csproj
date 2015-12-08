@@ -312,6 +312,10 @@
     <Compile Include="Migrations\201512081733151_fix31.Designer.cs">
       <DependentUpon>201512081733151_fix31.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512081750167_SPS.cs" />
+    <Compile Include="Migrations\201512081750167_SPS.Designer.cs">
+      <DependentUpon>201512081750167_SPS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -386,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512081733151_fix31.resx">
       <DependentUpon>201512081733151_fix31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512081750167_SPS.resx">
+      <DependentUpon>201512081750167_SPS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

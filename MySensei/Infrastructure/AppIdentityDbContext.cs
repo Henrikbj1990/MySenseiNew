@@ -28,6 +28,8 @@ namespace MySensei.Infrastructure
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Types().Configure(t => t.MapToStoredProcedures());
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); // Identity use pluralized table names
             // one-to-many relation between Course (1) and User (N)
             modelBuilder.Entity<Course>()
@@ -39,7 +41,6 @@ namespace MySensei.Infrastructure
             modelBuilder.Entity<Course>()
                 .HasMany(s => s.CourseStudents)
                 .WithMany(t => t.StudentCourses)
-                .MapToStoredProcedures()
                 .Map(m =>
                 {
                     m.ToTable("StudentCourses");
