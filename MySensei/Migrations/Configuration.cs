@@ -37,18 +37,42 @@ namespace MySensei.Migrations
                 userMgr.AddToRole(user.Id, roleName);
             }
 
-            if (!context.Tags.Any(x => x.TagName == "Funny"))
+            if (!context.Tags.Any(x => x.TagName == "Musik"))
             {
                 var tag = new Tag();
-                tag.TagName = "Funny";
+                tag.TagName = "Musik";
 
                 context.Tags.Add(tag);
             }
 
-            if (!context.Tags.Any(x => x.TagName == "Boring"))
+            if (!context.Tags.Any(x => x.TagName == "Sport"))
             {
                 var tag = new Tag();
-                tag.TagName = "Boring";
+                tag.TagName = "Sport";
+
+                context.Tags.Add(tag);
+            }
+
+            if (!context.Tags.Any(x => x.TagName == "IT"))
+            {
+                var tag = new Tag();
+                tag.TagName = "IT";
+
+                context.Tags.Add(tag);
+            }
+
+            if (!context.Tags.Any(x => x.TagName == "Arbejde"))
+            {
+                var tag = new Tag();
+                tag.TagName = "Arbejde";
+
+                context.Tags.Add(tag);
+            }
+
+            if (!context.Tags.Any(x => x.TagName == "Hobby"))
+            {
+                var tag = new Tag();
+                tag.TagName = "Hobby";
 
                 context.Tags.Add(tag);
             }

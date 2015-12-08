@@ -171,6 +171,9 @@ namespace MySensei.Controllers
         public ActionResult EditCourse(int? courseId, string[] selectedTags)
         {
             var courseToUpdate = db.Courses.Include(c => c.CourseTeacher).Include(c => c.Tags).Where(c => c.CourseID == courseId).Single();
+            var manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            
             if (TryUpdateModel(courseToUpdate, "", new string[] { "Title", "Description", "StartDate", "EndDate", "NumberOfLessons", "CourseTeacherId" }))
             {
                 try
@@ -186,7 +189,8 @@ namespace MySensei.Controllers
 
             // Tags check boxes
             PopulateTagsData(courseToUpdate);
-            return View(courseToUpdate);
+
+            return View("Index", currentUser);
         }
 
         // GET: Courses/Delete/5
