@@ -1024,6 +1024,23 @@ header {
   .edit textarea {
     min-height: 200px; }
 
+.delete h3 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  color: #ffcb63;
+  margin-bottom: 15px; }
+
+.delete p {
+  color: #ffcb63; }
+
+.delete footer {
+  float: right; }
+  .delete footer button {
+    background: #ffcb63;
+    border: none;
+    color: #FFF;
+    padding: 15px; }
+
 @media all and (max-width: 1024px) {
   section h1 {
     font-size: 40px; }
