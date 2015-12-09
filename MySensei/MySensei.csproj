@@ -214,6 +214,7 @@
     <Content Include="Content\styles.min.css">
       <DependentUpon>styles.css</DependentUpon>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -240,6 +241,11 @@
     <Content Include="Content\form.css.map">
       <DependentUpon>form.css</DependentUpon>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\MySenseiEAA.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Global.asax" />
@@ -281,46 +287,6 @@
     <Compile Include="Infrastructure\AppIdentityDbContext.cs" />
     <Compile Include="Infrastructure\CustomPasswordValidator.cs" />
     <Compile Include="Infrastructure\IdentityHelpers.cs" />
-    <Compile Include="Migrations\201511271414375_coursetable.cs" />
-    <Compile Include="Migrations\201511271414375_coursetable.Designer.cs">
-      <DependentUpon>201511271414375_coursetable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511271650289_one-to-many-course-user-table.cs" />
-    <Compile Include="Migrations\201511271650289_one-to-many-course-user-table.Designer.cs">
-      <DependentUpon>201511271650289_one-to-many-course-user-table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511281451556_Tags.cs" />
-    <Compile Include="Migrations\201511281451556_Tags.Designer.cs">
-      <DependentUpon>201511281451556_Tags.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512040854227_UserDesc.cs" />
-    <Compile Include="Migrations\201512040854227_UserDesc.Designer.cs">
-      <DependentUpon>201512040854227_UserDesc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512051037564_CourseRoles.cs" />
-    <Compile Include="Migrations\201512051037564_CourseRoles.Designer.cs">
-      <DependentUpon>201512051037564_CourseRoles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512081725168_fix3.cs" />
-    <Compile Include="Migrations\201512081725168_fix3.Designer.cs">
-      <DependentUpon>201512081725168_fix3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512081733151_fix31.cs" />
-    <Compile Include="Migrations\201512081733151_fix31.Designer.cs">
-      <DependentUpon>201512081733151_fix31.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512081750167_SPS.cs" />
-    <Compile Include="Migrations\201512081750167_SPS.Designer.cs">
-      <DependentUpon>201512081750167_SPS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512082100406_test.cs" />
-    <Compile Include="Migrations\201512082100406_test.Designer.cs">
-      <DependentUpon>201512082100406_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512090005262_Initial.cs" />
-    <Compile Include="Migrations\201512090005262_Initial.Designer.cs">
-      <DependentUpon>201512090005262_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -373,38 +339,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511271414375_coursetable.resx">
-      <DependentUpon>201511271414375_coursetable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511271650289_one-to-many-course-user-table.resx">
-      <DependentUpon>201511271650289_one-to-many-course-user-table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511281451556_Tags.resx">
-      <DependentUpon>201511281451556_Tags.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512040854227_UserDesc.resx">
-      <DependentUpon>201512040854227_UserDesc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512051037564_CourseRoles.resx">
-      <DependentUpon>201512051037564_CourseRoles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512081725168_fix3.resx">
-      <DependentUpon>201512081725168_fix3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512081733151_fix31.resx">
-      <DependentUpon>201512081733151_fix31.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512081750167_SPS.resx">
-      <DependentUpon>201512081750167_SPS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512082100406_test.resx">
-      <DependentUpon>201512082100406_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512090005262_Initial.resx">
-      <DependentUpon>201512090005262_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

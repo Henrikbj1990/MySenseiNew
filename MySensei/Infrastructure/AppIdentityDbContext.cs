@@ -11,17 +11,10 @@ namespace MySensei.Infrastructure
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
 
-        // Set the throwIfV1Schema to false...
-        //public AppIdentityDbContext()
-        //    : base("IdentityDb", throwIfV1Schema: false)
-        //{
-
-        //    Database.SetInitializer<AppIdentityDbContext>(new IdentityDbInit());
-        //}
+        public AppIdentityDbContext() : base("IdentityDb") { }
 
         static AppIdentityDbContext()
         {
-            //Database.SetInitializer(new CreateDatabaseIfNotExists<AppIdentityDbContext>());
             Database.SetInitializer<AppIdentityDbContext>(new IdentityDbInit());
         }
 
