@@ -1,4 +1,14 @@
 ﻿@import url(reset.css);
+footer {
+  background-color: #efefef;
+  width: 110%;
+  margin-left: -5%;
+  margin-top: 1%;
+  bottom: 0;
+  text-align: center;
+  position: relative;
+}
+
 body {
   background-color: #ffffff;
   color: #3B3B3B;
@@ -6,6 +16,11 @@ body {
   font-weight: 100;
   font-size: 16px;
   line-height: 1.8;
+}
+
+h2 {
+  color: red;
+  font-size: large;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -3,53 +3,54 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - MySensei Admin</title>
     <link href="~/Areas/Admin/Content/AdminStyles.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <style>
     </style>
 </head>
-    <body class="container">
+<body class="container">
 
-<div id="wrapper" class="page-wrap">
+    <div id="wrapper" class="page-wrap">
 
-    <header>
-        <div class="container clearfix">
-            <a href="@Url.Action("Index", "Home")">
-                <img class="logo" src="@Url.Content("~/Content/img/AdminLogo.png")" />
-            </a>
-        <nav>
+        <header>
+            <div class="container clearfix">
+                <a href="@Url.Action("Index", "Home")">
+                    <img class="logo" src="@Url.Content("~/Content/img/AdminLogo.png")" />
+                </a>
+                <nav>
 
-            @Html.ActionLink("Users", "Index", "Admin")
-            @Html.ActionLink("Roles", "Index", "RoleAdmin")
-            @Html.ActionLink("Courses", "Index", "Courses")
+                    @Html.ActionLink("Users", "Index", "Users")
+                    @Html.ActionLink("Roles", "Index", "RoleAdmin")
+                    @Html.ActionLink("Courses", "Index", "Courses")
 
-        </nav>
+                </nav>
             </div>
-</header>
+        </header>
 
 
         <div class="container">
-        <div id="main">
-            <div id="content">
+            <div id="main">
+                <div id="content">
 
-            @RenderBody()
-        </div>
-
-
-            <footer>
-                <div class="container center">
-                    <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert.</p>
+                    @RenderBody()
                 </div>
-            </footer>
 
-        </div><!-- #main -->
+
+
+
+            </div><!-- #main -->
+
+        </div>
 
     </div>
 
-</div>
+    <footer>
+        <div class="center">
+            <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert.</p>
+        </div>
+    </footer>
 
-
-        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    </body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+</body>
 </html>

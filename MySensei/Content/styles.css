@@ -834,6 +834,11 @@ a.y-btn {
   background: #ffcb63 !important;
   padding: 10px;
   margin-bottom: 15px;
+  color: #47b7b7 !important;
+}
+
+a.y-btn:hover {
+  color: white;
 }
 
 #wrapper {
@@ -843,7 +848,7 @@ a.y-btn {
 
 #main {
   background-color: #fff;
-  padding-top: 100px;
+  padding-top: 35px;
 }
 
 .container {
@@ -856,6 +861,14 @@ a.y-btn {
   padding: 30px 0;
 }
 
+#author {
+  font-size: smaller;
+}
+
+.coursePic {
+  border-radius: 50%;
+}
+
 section h1 {
   font-family: 'Roboto Slab', sans-serif;
   text-transform: uppercase;
@@ -864,6 +877,22 @@ section h1 {
   padding-bottom: 20px;
   margin-bottom: 10px;
   color: #ffcb63;
+}
+
+section h2 {
+  color: #47b7b7;
+  font-family: 'Roboto Slab', serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 15px 0;
+}
+
+section h3 {
+  color: #ffcb63;
+  font-family: 'Roboto Slab', serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 15px 0;
 }
 
 section p {
@@ -887,6 +916,14 @@ section .grey {
 .bluebg {
   margin-top: 30px;
   background-color: #47b7b7;
+  color: white;
+}
+
+.bluebg a {
+  color: #ffcb63;
+}
+
+.bluebg a:hover {
   color: white;
 }
 
@@ -1101,6 +1138,11 @@ header nav a:hover {
   background: #3B3B3B;
 }
 
+.grid-4 .coursePic {
+  width: 75%;
+  border-radius: 50%;
+}
+
 .grid-4 h3 {
   color: #47b7b7;
   font-family: 'Roboto Slab', sans-serif;
@@ -1129,6 +1171,7 @@ header nav a:hover {
 .center {
   margin: 0 auto;
   padding-top: 15px;
+  padding-bottom: 1%;
   text-align: center;
 }
 
@@ -1279,6 +1322,9 @@ header nav a:hover {
 }
 
 @media all and (max-width: 768px) {
+  #main {
+    padding-top: 65px;
+  }
   .edit {
     width: 500px;
     padding: 10px;
@@ -1306,6 +1352,12 @@ header nav a:hover {
 }
 
 @media all and (max-width: 480px) {
+  #main {
+    padding-top: 15px;
+  }
+  .small nav {
+    margin-top: -10px;
+  }
   .edit {
     width: 98%;
     padding: 1%;
@@ -1364,6 +1416,9 @@ header nav a:hover {
   header .sidebar:target {
     width: 90%;
   }
+  .coursePic {
+    width: 50%;
+  }
   .split {
     width: 100%;
   }
@@ -1372,7 +1427,11 @@ header nav a:hover {
   }
   .grid-4 {
     width: 90%;
-    margin: 0 auto;
+    margin: 2% 4%;
+  }
+  .grid-4 p {
+    line-height: 0.8;
+    margin-bottom: 15px;
   }
   .grid-3 {
     width: 90%;
