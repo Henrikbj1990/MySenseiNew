@@ -168,7 +168,6 @@
     <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
     <Content Include="bin\Microsoft.Owin.Security.xml" />
     <Content Include="bin\Microsoft.Owin.xml" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
     <Content Include="bin\MySensei.dll" />
     <Content Include="bin\MySensei.pdb" />
     <Content Include="bin\Newtonsoft.Json.dll" />
@@ -226,9 +225,6 @@
     <Content Include="Content\styles.scss" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Content\AdminStyles.scss" />
-    <Content Include="Areas\Admin\Content\AdminStyles.css.map">
-      <DependentUpon>AdminStyles.css</DependentUpon>
-    </Content>
     <Content Include="bin\MySensei.dll.config" />
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
@@ -244,6 +240,7 @@
     <Content Include="Content\form.css.map">
       <DependentUpon>form.css</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\MySenseiEAA.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\classie.js" />
@@ -315,6 +312,14 @@
     <Compile Include="Migrations\201512081750167_SPS.cs" />
     <Compile Include="Migrations\201512081750167_SPS.Designer.cs">
       <DependentUpon>201512081750167_SPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512082100406_test.cs" />
+    <Compile Include="Migrations\201512082100406_test.Designer.cs">
+      <DependentUpon>201512082100406_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512090005262_Initial.cs" />
+    <Compile Include="Migrations\201512090005262_Initial.Designer.cs">
+      <DependentUpon>201512090005262_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
@@ -393,6 +398,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512081750167_SPS.resx">
       <DependentUpon>201512081750167_SPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512082100406_test.resx">
+      <DependentUpon>201512082100406_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512090005262_Initial.resx">
+      <DependentUpon>201512090005262_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

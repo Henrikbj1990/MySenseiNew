@@ -10,10 +10,18 @@ namespace MySensei.Infrastructure
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
-        public AppIdentityDbContext() : base("IdentityDb") { }
+
+        // Set the throwIfV1Schema to false...
+        //public AppIdentityDbContext()
+        //    : base("IdentityDb", throwIfV1Schema: false)
+        //{
+
+        //    Database.SetInitializer<AppIdentityDbContext>(new IdentityDbInit());
+        //}
 
         static AppIdentityDbContext()
         {
+            //Database.SetInitializer(new CreateDatabaseIfNotExists<AppIdentityDbContext>());
             Database.SetInitializer<AppIdentityDbContext>(new IdentityDbInit());
         }
 
@@ -28,7 +36,6 @@ namespace MySensei.Infrastructure
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Types().Configure(t => t.MapToStoredProcedures());
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); // Identity use pluralized table names
             // one-to-many relation between Course (1) and User (N)
@@ -41,6 +48,7 @@ namespace MySensei.Infrastructure
             modelBuilder.Entity<Course>()
                 .HasMany(s => s.CourseStudents)
                 .WithMany(t => t.StudentCourses)
+                .MapToStoredProcedures()
                 .Map(m =>
                 {
                     m.ToTable("StudentCourses");
@@ -52,12 +60,15 @@ namespace MySensei.Infrastructure
             modelBuilder.Entity<Course>()
             .HasMany(t => t.Tags)
             .WithMany(t => t.Courses)
+            .MapToStoredProcedures()
             .Map(m =>
             {
                 m.ToTable("CoursesTags");
                 m.MapLeftKey("CourseID");
                 m.MapRightKey("TagID");
             });
+
+            modelBuilder.Types().Configure(t => t.MapToStoredProcedures());
 
             // the all important base class call! Add this line to make your problems go away.
             base.OnModelCreating(modelBuilder);
